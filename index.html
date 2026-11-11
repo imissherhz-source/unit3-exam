@@ -165,7 +165,7 @@ async function openExam(id){
     QMAP = {}; SECNAME = {};
     (EX.sections||[]).forEach(s=>SECNAME[s.id]=s.name);
     const cnt = {};
-    EX.questions.forEach(q=>{ cnt[q.s]=(cnt[q.s]||0)+1; QMAP[q.id] = {id:q.id, sec:q.s, n:cnt[q.s], text:q.q, opts:q.o, ans:q.a}; });
+    EX.questions.forEach(q=>{ cnt[q.s]=(cnt[q.s]||0)+1; QMAP[q.id] = {id:q.id, sec:q.s, n:cnt[q.s], text:q.q, opts:q.o, ans:q.a, exp:q.e||""}; });
     EX.counts = cnt;
   }
   cfg.sec="all";
@@ -251,7 +251,10 @@ function renderQ(){
   if(locked){
     html += a===q.ans ? `<div class="feedback ok">✓ إجابة صحيحة، أحسنت!</div>`
                       : `<div class="feedback no">✗ الإجابة الصحيحة: (${LET[q.ans]}) ${esc(q.opts[q.ans])}</div>`;
+    if(q.exp) html += `<div class="explain">💡 ${esc(q.exp)}</div>`;
   }
+  $("#qcard").classList.toggle("no-anim", renderQ.last===q.id);
+  renderQ.last = q.id;
   $("#qcard").innerHTML = html;
   $("#qcard").querySelectorAll(".opt").forEach(b=>b.onclick=()=>choose(+b.dataset.k));
   $("#flagBtn").onclick=()=>{S.flags[q.id]=!S.flags[q.id]; if(!S.flags[q.id]) delete S.flags[q.id]; save(); renderQ();};
@@ -399,7 +402,7 @@ function renderReview(){
     return `<div class="card rv"><div class="qmeta"><span class="tag">${tag}</span>${st}</div>
       <div class="qtext">${qHTML(q)}</div><div class="opts">${q.opts.map((o,k)=>{
         let c="opt"; if(k===q.ans)c+=" right"; else if(k===a)c+=" wrong";
-        return `<div class="${c}"><span class="L">${LET[k]}</span><span>${esc(o)}</span></div>`}).join("")}</div></div>`;
+        return `<div class="${c}"><span class="L">${LET[k]}</span><span>${esc(o)}</span></div>`}).join("")}</div>${q.exp?`<div class="explain">💡 ${esc(q.exp)}</div>`:""}</div>`;
   }).join("");
 }
 function toast(msg){ const t=document.createElement("div"); t.className="toast"; t.textContent=msg; document.body.appendChild(t); setTimeout(()=>t.remove(),2200); }

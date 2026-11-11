@@ -315,9 +315,10 @@ function questionDialog(idx){
       <div class="field"><span>الخيارات <small>(اضغط «صحيحة» بجانب الإجابة المعتمدة)</small></span>
         <div id="opts">${q.o.map((o,k)=>`<div class="opt-edit ${q.a===k?"correct":""}"><span class="L">${LET[k]}</span><input type="text" data-o="${k}" value="${esc(o)}"><label><input type="radio" name="corr" value="${k}" ${q.a===k?"checked":""}>صحيحة</label>${q.o.length>2?`<button class="ib danger" data-orm="${k}" aria-label="حذف الخيار">✕</button>`:""}</div>`).join("")}</div>
         ${q.o.length<6?`<button class="tbtn" id="addOpt">＋ خيار</button>`:""}</div>
+      <label class="field"><span>شرح الإجابة <small>(اختياري — يظهر للطالب بعد الحل)</small></span><textarea id="qExp" style="min-height:70px">${esc(q.e||"")}</textarea></label>
       <div class="err-box" id="qErr"></div>
       <div class="modal-actions"><button class="btn ghost" id="qCancel">إلغاء</button><button class="btn primary" id="qOk">${idx===null?"إضافة":"حفظ"}</button></div></div></div>`;
-    const sync=()=>{ q.q=$("#qText").value; document.querySelectorAll("[data-o]").forEach(i=>q.o[+i.dataset.o]=i.value); if($("#qSec")) q.s=$("#qSec").value; };
+    const sync=()=>{ q.q=$("#qText").value; q.e=$("#qExp").value.trim(); if(!q.e) delete q.e; document.querySelectorAll("[data-o]").forEach(i=>q.o[+i.dataset.o]=i.value); if($("#qSec")) q.s=$("#qSec").value; };
     document.querySelectorAll("input[name=corr]").forEach(r=>r.onchange=()=>{ sync(); q.a=+r.value; draw(); });
     document.querySelectorAll("[data-orm]").forEach(b=>b.onclick=()=>{ sync(); const k=+b.dataset.orm; q.o.splice(k,1); if(q.a===k) q.a=-1; else if(q.a>k) q.a--; draw(); });
     $("#addOpt") && ($("#addOpt").onclick=()=>{ sync(); q.o.push(""); draw(); });
