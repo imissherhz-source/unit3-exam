@@ -3,15 +3,15 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>امتحان الوحدة الثالثة — 100 سؤال</title>
-<meta name="description" content="امتحان تفاعلي شامل للوحدة الثالثة: نص «فيض العدوى» والمبتدأ والخبر — 100 سؤال مع النتيجة الفورية ومراجعة الأخطاء.">
+<title>منصّة الامتحانات</title>
+<meta name="description" content="منصّة امتحانات تفاعلية: اختر الامتحان، حلّ أونلاين، واعرف نتيجتك فورًا مع مراجعة الأخطاء.">
 <meta name="theme-color" content="#8a1d5c" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#151116" media="(prefers-color-scheme: dark)">
 <meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-title" content="امتحان الوحدة ٣">
+<meta name="apple-mobile-web-app-title" content="الامتحانات">
 <meta property="og:type" content="website">
-<meta property="og:title" content="امتحان الوحدة الثالثة — 100 سؤال">
-<meta property="og:description" content="حلّ الامتحان أونلاين واعرف نتيجتك فورًا · نصوص وقواعد">
+<meta property="og:title" content="منصّة امتحانات اللغة العربية">
+<meta property="og:description" content="اختر الامتحان، حلّ أونلاين، واعرف نتيجتك فورًا">
 <meta property="og:image" content="https://imissherhz-source.github.io/unit3-exam/og.png">
 <meta property="og:url" content="https://imissherhz-source.github.io/unit3-exam/">
 <meta name="twitter:card" content="summary_large_image">
@@ -21,177 +21,38 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=Noto+Naskh+Arabic:wght@500;600;700&display=swap">
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=Noto+Naskh+Arabic:wght@500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
-<style>
-:root{
-  --bg:#f7f3ef; --surface:#ffffff; --surface-2:#fbf8f5; --ink:#211a22; --muted:#6f6470; --line:#e8e0e3;
-  --brand:#8a1d5c; --brand-2:#b4317a; --brand-soft:#f6e6ef; --ok:#1f8a5b; --ok-soft:#e3f4ec; --bad:#c23b3b; --bad-soft:#fbe7e7;
-  --warn:#c98a12; --shadow:0 1px 2px rgba(40,10,30,.05),0 8px 24px -12px rgba(40,10,30,.18); --r:18px;
-}
-@media (prefers-color-scheme:dark){:root{
-  --bg:#151116; --surface:#1f1920; --surface-2:#251e26; --ink:#f3ecf1; --muted:#a998a4; --line:#352b35;
-  --brand:#e05aa3; --brand-2:#f27dbb; --brand-soft:#3a2032; --ok:#3fbf87; --ok-soft:#173327; --bad:#ef6b6b; --bad-soft:#3a1d1d;
-  --shadow:0 1px 2px rgba(0,0,0,.3),0 10px 30px -14px rgba(0,0,0,.6);}}
-*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
-html,body{margin:0;background:var(--bg);color:var(--ink);font-family:"IBM Plex Sans Arabic",system-ui,sans-serif;line-height:1.6}
-button{font:inherit;color:inherit;cursor:pointer;border:0;background:none}
-.wrap{max-width:760px;margin:0 auto;padding:18px 16px 120px}
-.hidden{display:none!important}
-.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--shadow)}
-/* start */
-.hero{padding:28px 22px;text-align:center;position:relative;overflow:hidden}
-.hero::before{content:"";position:absolute;inset:0 0 auto 0;height:6px;background:linear-gradient(90deg,var(--brand),var(--brand-2))}
-.eyebrow{display:inline-block;font-size:13px;font-weight:600;color:var(--brand);background:var(--brand-soft);padding:4px 12px;border-radius:99px}
-h1{font-family:"Noto Naskh Arabic",serif;font-size:30px;margin:12px 0 4px;line-height:1.35}
-.sub{color:var(--muted);margin:0;font-size:15px}
-.stats{display:flex;justify-content:center;gap:10px;margin-top:18px;flex-wrap:wrap}
-.stat{background:var(--surface-2);border:1px solid var(--line);border-radius:14px;padding:8px 14px;min-width:88px}
-.stat b{display:block;font-size:20px;color:var(--brand)}
-.stat span{font-size:12px;color:var(--muted)}
-.section-title{font-weight:700;font-size:15px;margin:22px 4px 10px;color:var(--muted)}
-.choices{display:grid;gap:10px}
-.choices.two{grid-template-columns:1fr 1fr}
-.choice{display:flex;align-items:center;gap:12px;padding:14px 16px;text-align:right;border:1.5px solid var(--line);border-radius:14px;background:var(--surface);transition:.15s}
-.choice .ic{width:38px;height:38px;border-radius:11px;display:grid;place-items:center;background:var(--surface-2);font-size:18px;flex:none}
-.choice b{display:block;font-size:15px}
-.choice small{color:var(--muted);font-size:12.5px}
-.choice[aria-pressed="true"]{border-color:var(--brand);background:var(--brand-soft)}
-.choice[aria-pressed="true"] .ic{background:var(--brand);color:#fff}
-.toggle-row{display:flex;align-items:center;justify-content:space-between;padding:14px 16px;margin-top:10px}
-.switch{width:46px;height:28px;border-radius:99px;background:var(--line);position:relative;transition:.2s;flex:none}
-.switch::after{content:"";position:absolute;top:3px;right:3px;width:22px;height:22px;border-radius:50%;background:#fff;transition:.2s;box-shadow:0 1px 3px rgba(0,0,0,.25)}
-.switch[aria-checked="true"]{background:var(--brand)}
-.switch[aria-checked="true"]::after{right:21px}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:14px 20px;border-radius:14px;font-weight:700;font-size:16px;transition:.15s}
-.btn.primary{background:linear-gradient(135deg,var(--brand),var(--brand-2));color:#fff;box-shadow:0 8px 20px -10px var(--brand)}
-.btn.primary:active{transform:scale(.98)}
-.btn.ghost{border:1.5px solid var(--line);background:var(--surface)}
-.btn.block{width:100%}
-.resume{margin-top:12px;padding:14px 16px;display:flex;gap:12px;align-items:center;justify-content:space-between;border-color:var(--brand)}
-/* quiz */
-.topbar{position:sticky;top:0;z-index:10;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);padding:10px 16px 8px;border-bottom:1px solid var(--line)}
-.topbar .in{max-width:760px;margin:0 auto}
-.tb-row{display:flex;align-items:center;justify-content:space-between;gap:10px}
-.pill{font-size:13px;font-weight:600;padding:5px 11px;border-radius:99px;background:var(--surface);border:1px solid var(--line);display:inline-flex;gap:6px;align-items:center}
-.progress{height:6px;background:var(--line);border-radius:99px;margin-top:9px;overflow:hidden}
-.progress i{display:block;height:100%;background:linear-gradient(90deg,var(--brand),var(--brand-2));border-radius:99px;transition:width .3s}
-.qcard{padding:20px 18px;margin-top:16px}
-.qmeta{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px}
-.tag{font-size:12px;font-weight:700;padding:4px 10px;border-radius:99px;background:var(--brand-soft);color:var(--brand)}
-.flag{font-size:13px;color:var(--muted);padding:6px 10px;border-radius:10px;border:1px solid var(--line)}
-.flag[aria-pressed="true"]{color:var(--warn);border-color:var(--warn)}
-.qnum{font-size:13px;color:var(--muted);font-weight:600}
-.qtext{font-family:"Noto Naskh Arabic",serif;font-size:20px;font-weight:600;line-height:1.85;margin:4px 0 16px;white-space:pre-line}
-.qtext .quote{display:block;background:var(--surface-2);border-right:4px solid var(--brand);padding:10px 14px;border-radius:10px;margin-bottom:10px;font-size:18.5px}
-.opts{display:grid;gap:10px}
-.opt{display:flex;gap:12px;align-items:flex-start;text-align:right;padding:13px 14px;border:1.5px solid var(--line);border-radius:14px;background:var(--surface);font-size:16.5px;line-height:1.7;transition:.15s}
-.opt .L{width:32px;height:32px;flex:none;border-radius:10px;display:grid;place-items:center;font-weight:700;background:var(--surface-2);border:1px solid var(--line)}
-.opt:hover{border-color:color-mix(in srgb,var(--brand) 45%,var(--line))}
-.opt.sel{border-color:var(--brand);background:var(--brand-soft)}
-.opt.sel .L{background:var(--brand);color:#fff;border-color:var(--brand)}
-.opt.right{border-color:var(--ok);background:var(--ok-soft)}
-.opt.right .L{background:var(--ok);color:#fff;border-color:var(--ok)}
-.opt.wrong{border-color:var(--bad);background:var(--bad-soft)}
-.opt.wrong .L{background:var(--bad);color:#fff;border-color:var(--bad)}
-.opt[disabled]{cursor:default}
-.feedback{margin-top:14px;padding:12px 14px;border-radius:12px;font-weight:600;font-size:15px}
-.feedback.ok{background:var(--ok-soft);color:var(--ok)}
-.feedback.no{background:var(--bad-soft);color:var(--bad)}
-.navbar{position:fixed;bottom:0;left:0;right:0;z-index:10;background:color-mix(in srgb,var(--surface) 92%,transparent);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-top:1px solid var(--line);padding:12px 16px calc(12px + env(safe-area-inset-bottom))}
-.navbar .in{max-width:760px;margin:0 auto;display:flex;gap:10px}
-.navbar .btn{flex:1;padding:13px 10px}
-.navbar .btn.grid{flex:0 0 56px}
-/* sheet */
-.overlay{position:fixed;inset:0;background:rgba(20,8,16,.45);z-index:30;display:flex;align-items:flex-end;justify-content:center;animation:fade .2s}
-.sheet{width:100%;max-width:760px;max-height:82vh;overflow:auto;background:var(--surface);border-radius:22px 22px 0 0;padding:18px 16px calc(20px + env(safe-area-inset-bottom));animation:up .25s}
-.sheet h3{margin:0 0 4px;font-size:18px}
-.legend{display:flex;gap:12px;flex-wrap:wrap;font-size:12.5px;color:var(--muted);margin:6px 0 14px}
-.legend i{display:inline-block;width:12px;height:12px;border-radius:4px;vertical-align:middle;margin-left:4px}
-.grid10{display:grid;grid-template-columns:repeat(auto-fill,minmax(44px,1fr));gap:7px}
-.cell{height:42px;border-radius:10px;border:1.5px solid var(--line);font-weight:700;font-size:14px;background:var(--surface);position:relative}
-.cell.ans{background:var(--brand-soft);border-color:var(--brand);color:var(--brand)}
-.cell.cur{outline:2.5px solid var(--ink);outline-offset:1px}
-.cell.r{background:var(--ok-soft);border-color:var(--ok);color:var(--ok)}
-.cell.w{background:var(--bad-soft);border-color:var(--bad);color:var(--bad)}
-.cell.fl::after{content:"";position:absolute;top:4px;left:4px;width:7px;height:7px;border-radius:50%;background:var(--warn)}
-.grid-head{font-weight:700;font-size:14px;color:var(--muted);margin:14px 0 8px}
-.modal{background:var(--surface);border-radius:20px;padding:22px;max-width:380px;width:calc(100% - 32px);margin:auto;align-self:center;text-align:center;animation:pop .2s}
-.modal h3{margin:0 0 6px}
-.modal p{color:var(--muted);margin:0 0 18px}
-.modal .row{display:flex;gap:10px}
-.modal .row .btn{flex:1}
-@keyframes fade{from{opacity:0}}@keyframes up{from{transform:translateY(40px);opacity:0}}@keyframes pop{from{transform:scale(.95);opacity:0}}
-/* results */
-.result-hero{padding:26px 18px;text-align:center}
-.ring{width:170px;height:170px;margin:6px auto 10px;position:relative}
-.ring svg{transform:rotate(-90deg)}
-.ring .val{position:absolute;inset:0;display:grid;place-items:center;align-content:center}
-.ring .val b{font-size:40px;line-height:1}
-.ring .val span{color:var(--muted);font-size:14px;margin-top:4px}
-.grade{font-family:"Noto Naskh Arabic",serif;font-size:24px;font-weight:700;margin:4px 0}
-.breakdown{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:16px}
-.bd{background:var(--surface-2);border:1px solid var(--line);border-radius:14px;padding:12px 6px}
-.bd b{display:block;font-size:22px}
-.bd span{font-size:12.5px;color:var(--muted)}
-.secbars{margin-top:14px;padding:16px}
-.sb{margin:6px 0 14px}
-.sb:last-child{margin-bottom:4px}
-.sb .h{display:flex;justify-content:space-between;font-weight:600;font-size:14.5px;margin-bottom:6px}
-.sb .bar{height:10px;border-radius:99px;background:var(--line);overflow:hidden}
-.sb .bar i{display:block;height:100%;border-radius:99px;background:linear-gradient(90deg,var(--brand),var(--brand-2))}
-.actions{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:14px}
-.tabs{display:flex;gap:8px;margin:22px 0 12px;overflow-x:auto}
-.tab{padding:8px 14px;border-radius:99px;border:1.5px solid var(--line);font-weight:600;font-size:14px;white-space:nowrap;background:var(--surface)}
-.tab[aria-selected="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
-.rv{padding:16px;margin-bottom:10px}
-.rv .qtext{font-size:17px;margin-bottom:10px}
-.rv .opt{font-size:15px;padding:10px 12px}
-.rv .opt .L{width:28px;height:28px}
-.status{font-size:12px;font-weight:700;padding:3px 9px;border-radius:99px}
-.status.ok{background:var(--ok-soft);color:var(--ok)}.status.no{background:var(--bad-soft);color:var(--bad)}.status.skip{background:var(--surface-2);color:var(--muted);border:1px solid var(--line)}
-.empty{text-align:center;color:var(--muted);padding:30px}
-.foot{text-align:center;color:var(--muted);font-size:12.5px;margin-top:22px}
-.pill{min-height:40px}
-button.pill{min-width:56px;justify-content:center}
-.flag{min-height:40px}
-:focus-visible{outline:3px solid var(--brand-2);outline-offset:2px;border-radius:12px}
-.opt{animation:in .25s both}
-.opt:nth-child(2){animation-delay:.03s}.opt:nth-child(3){animation-delay:.06s}.opt:nth-child(4){animation-delay:.09s}
-.opt:active:not([disabled]){transform:scale(.985)}
-@keyframes in{from{opacity:0;transform:translateY(6px)}}
-.kbd{display:none;color:var(--muted);font-size:12.5px;text-align:center;margin-top:12px}
-.kbd b{display:inline-block;min-width:22px;padding:0 6px;border:1px solid var(--line);border-bottom-width:2px;border-radius:6px;background:var(--surface);font-size:12px;margin:0 2px}
-@media (hover:hover) and (pointer:fine){.kbd{display:block}}
-.hero::after{content:"";position:absolute;inset:auto -40px -60px auto;width:180px;height:180px;border-radius:50%;background:radial-gradient(circle,var(--brand-soft),transparent 70%);pointer-events:none}
-#confetti{position:fixed;inset:0;pointer-events:none;z-index:50}
-.share-row{display:grid;grid-template-columns:1fr;gap:10px;margin-top:10px}
-.toast{position:fixed;bottom:calc(24px + env(safe-area-inset-bottom));left:50%;transform:translateX(-50%);background:var(--ink);color:var(--bg);padding:10px 18px;border-radius:99px;font-weight:600;font-size:14px;z-index:60;animation:pop .2s}
-@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
-@media (max-width:420px){h1{font-size:25px}.qtext{font-size:18.5px}.opt{font-size:15.5px}.choices.two{grid-template-columns:1fr}}
-</style>
+<link rel="stylesheet" href="assets/style.css">
+<link rel="preload" href="exams.json" as="fetch" crossorigin>
 </head>
 <body>
 
-<!-- START -->
-<section id="start" class="wrap">
+<!-- HOME -->
+<section id="home" class="wrap">
   <div class="card hero">
-    <span class="eyebrow">شامل الوحدة الثالثة</span>
-    <h1>امتحان «فيض العدوى» والمبتدأ والخبر</h1>
-    <p class="sub">الدكتور منذر الدّروع · الأستاذ أسامة الأعرج</p>
-    <div class="stats">
-      <div class="stat"><b>١٠٠</b><span>سؤال</span></div>
-      <div class="stat"><b>٥٠</b><span>نصوص</span></div>
-      <div class="stat"><b>٥٠</b><span>قواعد</span></div>
-    </div>
+    <span class="eyebrow" id="siteEyebrow">منصّة الامتحانات</span>
+    <h1 id="siteTitle">منصّة الامتحانات</h1>
+    <p class="sub" id="siteSub"></p>
+    <p class="sub" id="siteTeacher" style="margin-top:6px;font-weight:600"></p>
+  </div>
+  <div class="section-title">اختر الامتحان</div>
+  <div id="examList" class="exam-list"><div class="loading"><div class="spinner"></div>جاري التحميل…</div></div>
+  <a class="teacher-link" href="admin.html">🔒 لوحة الأستاذ</a>
+</section>
+
+<!-- START (per exam) -->
+<section id="start" class="wrap hidden">
+  <button class="back" id="backHome">→ كل الامتحانات</button>
+  <div class="card hero">
+    <span class="eyebrow" id="exEyebrow">امتحان</span>
+    <h1 id="exTitle"></h1>
+    <p class="sub" id="exDesc"></p>
+    <div class="stats" id="exStats"></div>
   </div>
   <div id="resumeBox"></div>
 
-  <div class="section-title">اختر القسم</div>
-  <div class="choices" id="secChoices">
-    <button class="choice" data-sec="all" aria-pressed="true"><span class="ic">📚</span><span><b>الامتحان كاملًا</b><small>١٠٠ سؤال — نصوص وقواعد</small></span></button>
-    <div class="choices two">
-      <button class="choice" data-sec="t" aria-pressed="false"><span class="ic">📖</span><span><b>قسم النصوص</b><small>٥٠ سؤالًا</small></span></button>
-      <button class="choice" data-sec="g" aria-pressed="false"><span class="ic">✍️</span><span><b>قسم القواعد</b><small>٥٠ سؤالًا</small></span></button>
-    </div>
+  <div id="secWrap">
+    <div class="section-title">اختر القسم</div>
+    <div class="choices" id="secChoices"></div>
   </div>
 
   <div class="section-title">طريقة الحل</div>
@@ -206,14 +67,14 @@ button.pill{min-width:56px;justify-content:center}
   </div>
 
   <div style="margin-top:20px"><button class="btn primary block" id="startBtn">ابدأ الامتحان ←</button></div>
-  <p class="foot">الإجابات معتمدة من الإجابات النموذجية في الملف</p>
+  <p class="foot">الإجابات معتمدة من الإجابات النموذجية</p>
 </section>
 
 <!-- QUIZ -->
 <section id="quiz" class="hidden">
   <div class="topbar"><div class="in">
     <div class="tb-row">
-      <span class="pill" id="counter">١ / ١٠٠</span>
+      <span class="pill" id="counter">١ / ١</span>
       <span class="pill" id="scorePill" style="display:none"></span>
       <span class="pill">⏱ <span id="timer">00:00</span></span>
       <button class="pill" id="finishTop" style="color:var(--brand);border-color:var(--brand)">إنهاء</button>
@@ -238,172 +99,133 @@ button.pill{min-width:56px;justify-content:center}
 <canvas id="confetti" aria-hidden="true"></canvas>
 
 <script>
-const KEY_T = "ج ب د ب أ ج ج د أ د ب ب ج ب ب ب ج أ ج أ ج ب د ب ب ج ب ج ج ب ب د ب أ ب أ د ج أ د ج أ ج ج ج ب د د أ د".split(" ");
-const KEY_G = "ج أ ب د ب ج أ ب أ ج د ب ج أ ب د أ ج ب د د أ ب ج أ د ج ب أ د ب ج أ أ ج د أ ج ب د أ أ ب د أ ج ب أ د د".split(" ");
-
-const TEXTS = [
-["الفنّ النثريّ الذي ينتمي إليه نصّ (فيض العدوى):",["خاطرة","مذكّرات","مقالة علميّة","قصّة قصيرة"]],
-["الكتاب الذي أُخذ منه نصّ (فيض العدوى) وقام بترجمته مصطفى إبراهيم فهمي:",["الأدبيّات العلميّة: جائحة الوباء العالمي القادمة (جون ميلر)","الفيض: أمراض الحيوانات المعدية، وجائحة الوباء التالية بين البشر (ديفيد كوامن)","الفيروسات المراوغة: استراتيجية الكمون في العائل الخازن (روبرت ستون)","أمراض العصر: فيض العدوى واستئصال الأمراض الحيوانية (مايكل براون)"]],
-["الفرق بين المفترسات والمُمرِضات من حيث تعامل كلٍّ منها مع الفرائس:",["المفترسات وحوش كبيرة نسبيًا تأكل فرائسها من الداخل، والممرضات كائنات دقيقة تأكل فرائسها من الخارج.","الممرضات تتخذ من الكائن الحي عائلًا خازنًا تفترسه من الخارج، والمفترسات تفترسه من الداخل.","الممرضات تهاجم الكائن الحي من الخارج بوصفها كيانًا معديًا، والمفترسات تأكل فرائسها من الداخل.","المفترسات وحوش كبيرة نسبيًا تأكل فرائسها من الخارج، والممرضات وحوش صغيرة تفترسها من الداخل."]],
-["(هَلْ يُمْكِنُ لِشَيْءٍ لا يُرى أَنْ يُحيطَ بِنا، وَأَنْ يَكونَ قادِرًا عَلى أَنْ يَهْزِمَ مَدينَةً كامِلَةً؟)\nالأثر الفنيّ الذي حقّقه افتتاح النصّ بأسلوب الاستفهام:",["تقرير حقيقة قدرة الأمراض على هزيمة المدن وتأكيد انتشارها السريع.","جذب الانتباه وإثارة الفضول للتفكير في خطورة الممرضات وقدرتها على الانتشار.","نفي إمكانية رؤية الكائنات الدقيقة التي تسبب الأمراض المعدية وتدميرها.","التعجب من قدرة الكائنات الصغيرة على إرساء نفسها داخل فرائسها من الخارج."]],
-["ما يترتّب على (وثوب جرثومةٍ من أحد الحيوانات إلى البشر، وإرساء نفسها فيه):",["حدوث مرضٍ حيوانيّ مشترك؛ ممّا قد يسبّب المرض أو الموت للإنسان.","تحوّل الجرثومة إلى سلالةٍ غير مُعدية تزول مع الوقت.","القضاء التامّ على الناقل الحيوانيّ الأصليّ للجرثومة.","ضعف شدّة الفيروس وتلاشيه داخل الخلايا البشريّة."]],
-["معنى كلمة (الكيان) في عبارة: (وَتَنْجَحُ في إرساءِ نَفْسِها فيهِ بِوَصْفِها كِيانًا مُعْدِيًا):",["التجدّد والنموّ","الاستقرار والتثبّت","الذات والوجود","القدرة والتأثير"]],
-["القرون في عبارة: على الرغم من الجهود التي بُذلت على مدى قرون، مفردها قرن، ويعني:",["عشرة أعوام.","خمسة وعشرين عامًا.","مئة عام.","ألف عام."]],
-["كلّ ممّا يأتي يترتّب على (فهم مصطلح المرض الحيوانيّ المشترك، أو المرض ذي المنشأ الحيوانيّ)، ما عدا:",["معرفة شيء جوهري عن أصول بعض الأمراض القاتلة في هذا العصر.","فهم عناوين تشير إلى التهديد بجائحة وباء عالمي.","فهم أسماء أمراض كإنفلونزا الخنازير وإنفلونزا الطيور وجنون البقر.","السيطرة التامة على حركة الحيوانات داخل أسواق الحيوانات الحية."]],
-["وصف الكاتب مصطلح \"المرض الحيوانيّ المشترك\" بأنّه يبدو من المستقبل؛ لأنّ:",["مصيره الاستعمال بكثافة في القرن الحادي والعشرين.","حتمية اختفاء هذه الأمراض سيكون في المستقبل القريب بفضل الطب.","العلماء لم يستطيعوا التعامل معه في الماضي.","قدرته على التحوّل إلى وباء لا يصيب إلا الأجيال القادمة."]],
-["(تَبَيَّنَ أَنَّ مَصْدَرَها الأَصْلِيَّ طَيْرٌ مائِيٌّ بَرِّيٌّ، وَقَدْ تَسَبَّبَتْ في وَفاةِ خَمْسَةِ مَلايينِ إِنْسانٍ قَبْلَ أَنْ تَتَراجَعَ إِلى الْخَفاءِ).\nالإحالة التاريخية في هذه العبارة تعود إلى:",["جائحة فيروس كورونا عام ٢٠١٩م.","جميع أنواع الإنفلونزا البشرية المتناثرة.","إنفلونزا الطيور التي انبثقت مؤخرًا.","الإنفلونزا في العامين ١٩١٨-١٩١٩م."]],
-["المقصود بكلمة (جائحة) في عبارة: (وَأَنْ نَفْهَمَ عَناوينَ تُشيرُ إِلى التَّهْديدِ بِجائِحَةِ وَباءٍ عالَمِيٍّ):",["المرض المحدود الذي يصيب فئة قليلة من الناس.","الوباء العظيم، والمصيبة التي تحلّ بالناس.","الكارثة الطبيعية كالزلازل والبراكين فقط.","الانخفاض المفاجئ في درجات الحرارة."]],
-["يختلف (داء الكَلَب) عن النوع الآخر من الأمراض (الجديدة المتناثرة على نحوٍ لم يُفسَّر) في كونه:",["متناثرًا يصيب عددًا قليلًا ويختفي، بينما الجديدة تنتشر على نحو رهيب.","منتشرًا ومميتًا على نحو رهيب ويقتل بالآلاف، بينما الجديدة تصيب ضحايا قليلين وتختفي لسنوات.","يختبئ داخل العائل الخازن بشكل مستتر، بينما الجديدة تقيم كامنة في الرياح.","يعكس مفعول جرثومة قاتلة، بينما الجديدة لم تنجح في إرساء نفسها بوصفها كيانًا معديًا."]],
-["الصفة التي يتميّز بها \"العائل الخازن\" بالنسبة للمرض الذي يحمل جرثومته هي أنّه:",["يعاني من أعراضه المرضية بشدّة.","يموت فور دخول الجرثومة إلى جسده.","لا يعاني هو من المرض.","يتعافى من الجرثومة بعد فترة قصيرة."]],
-["يُعرَّف \"العائل الخازن\" بأنّه:",["كائن حيّ ينقل المرض ويعاني من أعراضه بشكل حادّ.","كائن حيّ يحمل الجرثومة المرضية ويؤويها على نحو مزمن، بينما لا يعاني هو من المرض.","جرثومة مرضية تنتشر سريعًا في الهواء والماء.","كائن حيّ يقضي على الجرثومة المرضية في جسده نهائيًا."]],
-["المقصود بـ \"استراتيجية الكمون\" هو:",["القضاء التامّ على الجراثيم داخل الكائن الحيّ.","بقاء الجراثيم كامنة داخل العائل الخازن حتى تُتاح لها فرصة الانتقال والانتشار من جديد.","سرعة انتشار الجراثيم المباشرة بين الكائنات دون سكون.","تحوّل الجراثيم إلى كائنات نافعة داخل العائل الخازن."]],
-["مفرد كلمة (الجُرذان) ومعناها:",["جَرذة، وهو الصغير من الفئران.","جُرَذ، وهو الكبير من الفئران.","جَريذ، وهو نوع من الزواحف.","جِرذ، وهو الفأر المائي."]],
-["(لَكِنَّهُ سَيَظْهَرُ عِنْدَما تَعودُ بِهِ الرّيحُ مِنْ مَكانٍ آخَرَ، أَوْ رُبَّما يَكونُ لا يَزالُ يَتَسَكَّعُ عَنْ قُرْبٍ).\nتفسّر العبارة السابقة سلوك المرض في مرحلة:",["التكاثر داخل الكيان المعدي.","الاكتساح الوبائي الشامل.","الاختفاء المؤقت وعدم الزوال التام.","المقاومة والعلاج الطبي."]],
-["المقصود بـ(يتسكّع) في عبارة \"يَتَسَكَّعُ عَنْ قُرْبٍ، هُنا وَهُناكَ، داخِلَ عائِلٍ خازِنٍ\":",["يتجوّل ويدور بلا هدف.","يتربّص بفرائسه بوعي كامل.","يتكاثر بأعداد ضخمة وسريعة.","يختبئ وينتظر الفرصة للقضاء على العائل."]],
-["تُعدّ الفيروسات أكثر الجراثيم الممرضة خطرًا للأسباب الآتية، ما عدا:",["قدرتها على التطوّر السريع والمستمر.","إحداثها معدلات عالية من الوفيات.","امتلاكها وسيلة نقل تخصّها للسباحة والجري.","مراوغتها وعدم تأثّرها بالمضادات الحيوية."]],
-["المقصود بقول الكاتب: (الفيروسات لا تستطيع أن تجري، ولا أن تمشي، ولا أن تسبح، لكنّها تركب):",["أنّ الفيروسات لا تتحرّك بنفسها، برًّا أو بحرًا، لكنّها تنتقل بوساطة الكائنات الحيّة ووسائل النقل.","فشل الفيروسات في التنقل الذاتي مما يحدّ من قدرتها على الوصول للبشر.","امتلاك الفيروسات أعضاء خاصّة تساعدها على الحركة والتنقّل الذاتي.","عجز الفيروسات التام عن إحداث العدوى خارج العائل الخازن."]],
-["(الفيروسات لا تستطيع أن تجري، ولا أن تمشي، ولا أن تسبح، لكنّها تركب) غرض الكاتب من العبارة السابقة:",["ضعف الفيروسات وسهولة القضاء عليها.","أنّ الفيروسات كائنات بطيئة الانتقال لا تستطيع قطع المسافات البعيدة بين الدول.","سرعة انتشار الفيروسات، وخفاؤها، وخطورتها في العالم.","كيفية تكاثر الفيروسات داخل جسد المريض."]],
-["جمال التصوير في قول العالِم (ستيفن مورس): «الفيروسات ليس لديها وسيلة تنقّل تخصّها، بيد أنّ كثيرًا منها يسافر حول العالم» هو أنّه صوّر الفيروسات بـ:",["كائنات ضعيفة لا قدرة لها على الحركة أو التأثير.","المسافر الذي ينتقل بين البلدان.","آلات حديثة تتنقل بسرعة فائقة عبر الحدود.","طيور مهاجرة تبحث عن طعامها."]],
-["الجذور اللغوية للكلمات الآتية: (محدقة، مراوغة، سينبثق) على الترتيب:",["حدي، ريغ، نبق.","دقق، مرغ، بثق.","حدق، نبق، روغ.","حدق، روغ، بثق."]],
-["(نجد في الأدبيات العلمية أنّه إذا كان ثمّة وباء كبير قادم فإنّه سيكون مرضًا حيوانيًا مشتركًا) المقصود بـ\"الأدبيات العلمية\" هو:",["المقالات الأدبية والقصائد التي تتناول القضايا العلمية.","مجموعة المنشورات العلمية في التخصّصات كافّة.","الكتب التاريخية التي توثّق نشأة العلوم القديمة.","الأبحاث الطبية المتخصّصة في الأمراض الحيوانية فقط."]],
-["تشير الأدبيات العلمية إلى أنّ الوباء الكبير القادم سيكون:",["مرضًا يقتصر أثره على الحيوانات فقط.","مرضًا حيوانيًا مشتركًا.","مرضًا بكتيريًا ينتقل عبر المياه الملوّثة.","مرضًا ناتجًا عن التغيّرات المناخية المباشرة."]],
-["الحادثة الواقعية التي أخرجت تحذيرات عالم الوبائيات (دونالد س. بيرك) من دائرة الاحتمالات النظرية إلى الواقع الملموس:",["جائحة الإنفلونزا عام ١٩١٨م والتي حصدت خمسة ملايين ضحية.","قدرة فيروس الإيدز على المراوغة في القرن الحادي والعشرين.","ظهور فيروس كورونا عام ٢٠١٩م وتحوّله إلى جائحة عالمية غير مسبوقة.","تفشي داء الكلب وجدري القردة في أسواق الحيوانات الحية."]],
-["المقصود بالكلمة المخطوط تحتها في عبارة: (وبذلك نوفّر فرصةً لـ«فيض» العدوى):",["زوال","انتشار","إيقاف","كشف"]],
-["تكمن أهمية (استشراف المستقبل) في مواجهة الجوائح في كل ما يأتي، ما عدا:",["الاستعداد المبكر لتطوير الأنظمة الصحية الاستيعابية.","نشر الوعي الصحي لتقليل انتقال وانتشار العدوى.","الاستسلام للكوارث الوبائية بوصفها خارج نطاق تحكم البشر.","وضع خطط للاستجابة السريعة والحد من الخسائر البشرية والاقتصادية."]],
-["(يَنْبَغي لَنا أَنْ نُدْرِكَ أَنَّ هَذِهِ الأَوْبِئَةَ... تَنْجُمُ عَنْ عَوامِلَ قَدْ يُسَبِّبُها الإِنْسانُ، وَتَقَعُ في نِطاقِ تَحَكُّمِنا).\nيقصد بكلمة (نطاق) في هذا السياق:",["القدرة الجسدية.","البصيرة والفطنة.","الدائرة والحدود.","الاستشراف واليقظة."]],
-["الذي يُعدّ خطّ الدفاع الأوّل في مواجهة الوباء أو الجائحة:",["الكوادر الطبية والأدوية المتطوّرة.","وعي الأفراد والمجتمعات، وسرعة الاستجابة.","المشافي الميدانية والأبحاث العلمية.","الإغلاقات الاقتصادية والقوانين الصارمة."]],
-["الدور الأساسي لوعي الأفراد والتزامهم بالإجراءات الصحية في مواجهة الأوبئة هو:",["القضاء التامّ على الجراثيم.","الحدّ من انتشار الأوبئة وتقليل انتقال العدوى.","انتهاء الحاجة إلى الرعاية الطبية والعلاج.","سرعة إنتاج المطاعيم واللقاحات المضادة."]],
-["كلّ ممّا يأتي من العوامل التي تزيد فرصة (فيض العدوى)، ما عدا:",["زيارة مضامير السباق وكهوف الخفافيش.","الإقامة في فنادق تحوي مرضى غرباء.","العيش بكثافات سكانية عالية في مدن كثيرة.","عدم تناول المضادات الحيوية عند الشعور بالمرض."]],
-["(وَنَزورُ أَسْواقَ الحَيَواناتِ الحَيَّةِ، وَكُهوفَ الخَفافيشِ، وَمَضاميرَ السِّباقِ) مفرد كلمة (مضامير) ومعناها:",["ضمير، وهو السريرة والباطن.","مِضمار، وهو ميدان السباق.","مُضمَر، وهو المكان الضيّق.","ضامِر، وهو الشيء النحيف."]],
-["المعنى البلاغيّ الذي خرج إليه أسلوب الاستفهام في عبارة: مَن الذي يستطيع أن يجادل في ذلك؟ هو:",["النفي.","التعجّب.","التقرير.","التهكّم."]],
-["المقصود بكلمة (كَبْح) في قول الكاتب «إنّ سلوك الناس مهمّ جدًّا في كبح انتشار المرض المعدي» هو:",["الإسراع والتشجيع.","الإيقاف والمنع.","التغيير والتبديل.","الكشف والتشخيص."]],
-["الغرض الرئيس الذي سعى الكاتب إلى إبرازه من خلال مقارنته بين الإنسان والفراش هو:",["أنّ الإنسان يمتاز ببصيرته، وقدرته على التفكير بوعي، بخلاف الفراش الذي يتحرّك بدافع الغريزة.","إظهار التشابه السلوكي بين الإنسان والفراش عند التعرّض للمخاطر الصحيّة.","التأكيد على أنّ العواطف والغرائز هي المحرّك الأوّل لقرارات الإنسان والحيوان.","إثبات العجز البشري أمام الأوبئة مقارنةً بسرعة تكيّف الكائنات الأخرى."]],
-["(لَعَلَّ هَذا يَبْدو مُضْجِرًا؛ فَما يَعْنيهِ ذَلِكَ هُوَ أَنَّ الجُهْدَ الفَرْدِيَّ...). كلمة (مضجرًا) تدل على أنّ الأمر:",["مدهش ويبعث على التفاؤل.","مرعب ويفوق قدرة تحمّل البشر.","غامض ويصعب استيعابه.","مملّ وباعث على الضيق."]],
-["الصورة الفنية في عبارة (أَوْ أَلّا يَسْقُطَ في وَحْلِ الْمُخَدِّراتِ وَإِبَرِ حَقْنِها الْمُلَوَّثَةِ):",["شبّه إبر المخدرات بجرثومة كامنة تهاجم الجسد من الداخل كالوحوش.","شبّه المخدرات بوحل يسهل غسله بمجرد تطبيق الفطنة الفردية.","شبّه المخدرات وحلًا يسقط فيه الإنسان، ويصعب الخروج منه.","شبّه الأمراض الحيوانية المشتركة بالوحل الذي تتكاثر فيه الجراثيم."]],
-["جميع الآتية من سمات المقالة العلمية كما ظهرت في نص (فيض العدوى) ما عدا:",["العاطفة الجياشة والإغراق في التخيلات الرمزية المبهمة.","استخدام المصطلحات العلمية كالمرض الحيواني المشترك والعائل الخازن.","الاستناد إلى الحقائق والإحصائيات كعدد ضحايا إنفلونزا عام ١٩١٨م.","الاعتماد على التفسير والتعليل وربط الأسباب بالنتائج كتفسير أسباب انتشار العدوى."]],
-["يُعدّ الشرح من سمات المقالة العلميّة، كلّ ممّا يأتي يمثّل هذه السمة، ما عدا:",["\"نعيش بكثافات عالية في مدن كثيرة، نكثّر آلافًا من الماشية والدواجن، كلها محبوسة بأعداد ضخمة..\"","\"نقيم في فنادق فيها غرباء مرضى\"","\"نزور أسواق الحيوانات الحيّة، وكهوف الخفافيش...\"","ذكر جائحة الإنفلونزا في عامي (١٩١٨-١٩١٩م)، ووفاة ملايين البشر بسببها."]],
-["\"ثم نثِبُ إلى الطائرات، ونطير عائدين إلى الوطن، وبذلك نوفّر فرصةً لفيض العدوى التي سرعان ما تتحوّل إلى جائحة وبائية\"\nالسّمة الواردة في العبارة السابقة من سمات المقالة العلمية:",["الاستناد إلى الحقائق العلمية","الشرح","التدرّج المنطقيّ","الاعتماد على التفسير والتعليل وربط الأسباب بالنتائج"]],
-["من سمات المقالة العلميّة (الاستناد إلى الحقائق العلمية)، العبارة التي تمثّل هذه السّمة:",["ذكر جائحة الإنفلونزا في عامي (١٩١٨-١٩١٩م)، ووفاة ملايين البشر بسببها","\"نقيم في فنادق فيها غرباء مرضى\"","\"نزور أسواق الحيوانات الحيّة، وكهوف الخفافيش...\"","نعيش بكثافات عالية في مدن كثيرة"]],
-["يُعدّ استخدام المصطلحات العلمية من سمات المقالة العلميّة، كلّ ممّا يأتي يمثّل هذه السمة ما عدا:",["المرض الحيواني المشترك","الفيروسات","أسباب انتشار العدوى.","العائل الخازن"]],
-["ورد مرض (الإيدز) في النص كدليل على:",["سرعة تحول الفيروسات إلى جائحة تقتل خمسة ملايين إنسان سنويًا.","قدرة العائل الخازن على التسكع والاختفاء لسنوات في أسواق الحيوانات.","مسؤولية السلوك البشري المباشرة في نقل الفيروس، وأنه يمثل مرضًا ذا منشأ حيواني.","فشل الأدبيات العلمية في استشراف المستقبل والتنبؤ بانبثاق الفيروسات الوشيكة."]],
-["المقصود بكلمة (مُحدِقة) في عبارة: «إنّ الأخطار التي يطرحها المرض الحيوانيّ المشترك مُحدِقةٌ وشديدةٌ»:",["مخفيّة","مميتة","محيطة","بطيئة"]],
-["الجذر اللغوي للكلمات (الناجمة، وشيكة، متيقظين) على الترتيب:",["نجو، شيك، يقظ.","نجم، وشك، يقظ.","نجم، شوك، قيظ.","نجو، وشك، قظظ."]],
-["كلّ ممّا يلي يُعدّ من القيم الإيجابية التي يشتمل عليها النصّ، ما عدا:",["تعزيز الوعي الصحّي لدى الأفراد.","تحمّل المسؤولية الفردية في الوقاية من الأمراض.","التفكير الواعي في مواجهة الأخطار الصحّية.","الاكتفاء بالدور العلاجي وانتظار التدخّل الطبّي."]],
-["كلّ ممّا يأتي من الإجراءات الفردية التي نص عليها الكاتب للحدّ من انتشار الكوارث الوبائية، ما عدا:",["عدم ارتياد مضامير السباق أو لمس الأشياء في الفنادق.","ألا يركب الفرد طائرة وهو يحس بالمرض وألا يسعل دون تغطية فمه.","التوقف عن استهلاك اللحوم والدواجن المحبوسة بأعداد ضخمة.","الامتناع المطلق عن استخدام المضادات الحيوية للسماح للمناعة بالتطور."]],
-["(إنّ الأمر يتوقّف على السلوك البشري). يحمل هذا الاستنتاج دلالة على:",["مسؤولية الإنسان المباشرة وقدرته على التحكم في انتشار العدوى أو كبحها.","فشل الجهود من إمكانية استئصال الجراثيم الكامنة في الطبيعة.","عدم جدوى الأدبيات العلمية في ظل تطور الفيروسات المراوغة السريع.","حتمية الجائحة القادمة بغض النظر عن الجهد الفردي والفطنة الفردية."]],
-["كلّ ممّا يلي يُعدّ من الإجراءات التي تُسهم في الحدّ من الآثار الكارثية للجوائح المستقبلية، ما عدا:",["نشر الوعي الصحّي بين الناس.","أخذ اللقاحات الوقائية والتطعيمات.","الكشف المبكر عن الأمراض ومراقبة انتشارها.","الاكتفاء بالتدخّل العلاجي بعد تفشّي المرض."]]
-];
-
-const GRAMMAR = [
-["الجملة التي جاء فيها المبتدأ مصدرًا مؤوّلًا:",["يعجبني أن تلتزمَ بقوانين السير.","عرفتُ أنك تلتزمُ بقوانين السير.","أن تلتزمَ بقوانين السير خيرٌ لك.","أملي أن تلتزمَ بقوانين السير."]],
-["صورة الخبر للمبتدأ (النجاح) في جملة: \"النجاحُ طريقُه محفوفٌ بالتحديات المستمرة\":",["جملة اسمية","شبه جملة","مفرد","جملة فعلية"]],
-["إعراب كلمة (ذو) في جملة: \"كلُّ من عليها فانٍ، وذو العمل الصالح يبقى أثره مخلدًا\":",["مبتدأ مرفوع وعلامة رفعه الواو لأنه جمع مذكر سالم.","مبتدأ مرفوع وعلامة رفعه الواو لأنه من الأسماء الخمسة.","خبر مرفوع وعلامة رفعه الواو لأنه من الأسماء الخمسة.","فاعل مرفوع وعلامة رفعه الواو لأنه جمع المذكر السالم."]],
-["صورة المبتدأ في جملة: \"هذان العالمان الجليلان أسهما في تطوير الأبحاث الطبية\":",["اسم صريح","اسم موصول","ضمير منفصل","اسم إشارة"]],
-["الجملة التي جاء فيها الخبر شبه جملة ظرفية:",["السعادةُ في الرضا بما قسمه الله لنا.","القائدُ الفذُّ أمامَ جيشه دائمًا يتصدّرُ الصفوف.","العصفورُ على الشجرةِ.","الحقُّ فوقَ كلِّ اعتبارٍ مهما طال الزمان."]],
-["السبب في تقدّم الخبر على المبتدأ في جملة: \"في التأني المستمر وتجنّب التسرعِ سلامةٌ أكيدة\":",["المبتدأ نكرة والخبر مفرد.","المبتدأ معرفة والخبر شبه جملة.","المبتدأ نكرة والخبر شبه جملة.","المبتدأ نكرة والخبر جملة فعلية."]],
-["الجملة التي جاء فيها المبتدأ نكرة:",["في قلوبِ المؤمنين رحمةٌ واسعة.","الصبرُ مفتاح الفرج للمهموم.","أنتم أملُ الأمة ومستقبلها.","الذي يعمل بجد يصل لمبتغاه."]],
-["إعراب كلمة (نحن) في جملة: \"إنّما نحنُ حراسٌ لهذا الوطن الغالي\":",["اسم إنّ منصوب وعلامة نصبه الفتحة المقدرة.","ضمير منفصل مبني في محل رفع مبتدأ.","خبر إنّ مرفوع وعلامة رفعه الضمة الظاهرة.","ضمير منفصل مبني في محل رفع خبر المبتدأ."]],
-["إعراب كلمة (مجالا) في جملة: \"مجالا الهندسة والطب يتطلبان جهدًا مضاعفًا من الطالب\":",["مبتدأ مرفوع وعلامة رفعه الألف لأنه مثنى.","مبتدأ مرفوع وعلامة رفعه الألف لأنه ملحق بالمثنى.","مبتدأ مرفوع وعلامة رفعه الفتحة المقدرة للتعذر.","خبر مقدم مرفوع وعلامة رفعه الألف لأنه مثنى."]],
-["السبب في حذف ياء الاسم المنقوص (ساع) في جملة \"المواطنُ المخلصُ ساعٍ لرفعة بلاده\":",["لأنه جاء مبتدأ نكرة وغير مضاف.","لأنه جاء مجرورًا نكرة وغير مضاف.","لأنه جاء خبرًا مرفوعًا نكرة وغير مضاف.","لأنه جاء مضافًا إلى نكرة في حالة الرفع."]],
-["الخبر وصورته للمبتدأ (الأشجار) في جملة: \"الأشجارُ الباسقةُ في حديقتنا الواسعةِ تثمرُ كلَّ عامٍ\":",["الباسقةُ / مفرد","كلَّ عامٍ / شبه جملة ظرفية","في حديقتنا / شبه جملة","تثمرُ / جملة فعلية"]],
-["إعراب كلمة (الندى) في جملة: \"الندى المتساقطُ على الأزهار صباحًا يبعث الأمل\":",["مبتدأ مرفوع وعلامة رفعه الضمة الظاهرة.","مبتدأ مرفوع وعلامة رفعه الضمة المقدرة للتعذر.","خبر مرفوع وعلامة رفعه الضمة المقدرة للتعذر.","مبتدأ مرفوع وعلامة رفعه الضمة المقدرة للثقل."]],
-["الكلمة التي تعرب (مبتدأ ثانٍ) في جملة: \"المدينةُ العريقةُ شوارعُها مزينةٌ بالأضواء الملونة\":",["العريقةُ","مزينةٌ","شوارعُها","المدينةُ"]],
-["صورة الخبر في جملة: \"العاملون المخلصون في المصنع مقدّرونَ من الإدارة\":",["اسم مفرد","شبه جملة","جملة فعلية","جملة اسمية"]],
-["الجملة التي تتكوّن من (مبتدأ صورته مصدر مؤوّل + خبر صورته اسم مفرد):",["أن تدرس بجد يجعلك ناجحًا.","أن تتصدقَ في السرّ خيرٌ لك.","الصدقة أن تعطي المحتاج.","الذي يصوم رمضان مأجور."]],
-["صورة المبتدأ في عبارة: أنْ تُعِدَّ البرنامجَ الإذاعيَّ خيرٌ من الارتجال:",["ضمير منفصل","اسم استفهام","اسم إشارة","مصدر مؤوّل"]],
-["الضبط الصحيح لآخر كلمة (رجل) في جملة \"في القرية رجل حكيم يقصده الناس\":",["رجلٌ","رجلاً","رجلٍ","رجلْ"]],
-["إعراب كلمة (أخي) في جملة: \"أخِي الأكبرُ سندٌ لي في هذه الحياة\":",["مبتدأ مرفوع وعلامة رفعه الواو لأنه من الأسماء الخمسة، وهو مضاف.","مبتدأ مرفوع وعلامة رفعه الضمة الظاهرة على آخره، وهو مضاف.","مبتدأ مرفوع وعلامة رفعه الضمة المقدرة لاشتغال المحل بالحركة المناسبة، وهو مضاف.","مبتدأ مرفوع وعلامة رفعه الضمة المقدرة للتعذر، وهو مضاف."]],
-["صورة الخبر في عبارة: الوطنيّةُ أنْ نسعى لرفعِ اسمِ وطننا في المجالاتِ كافّة:",["جملة اسميّة","مصدر مؤوّل","شبه جملة","جملة فعلية"]],
-["صورة المبتدأ في جملة: \"اللواتي شاركنَ في مسابقة القراءة العربية مبدعاتٌ\":",["اسم إشارة","اسم ظاهر","ضمير منفصل","اسم موصول"]],
-["الجملة التي جاء فيها المبتدأ ضميرًا منفصلًا:",["الطالبُ هو الذي ينظم وقته.","هذا الوطنُ غالٍ على قلوبنا.","الذين يكتبون التاريخ عظماء.","أنتنَّ صانعاتُ الأجيال القادمة."]],
-["المبتدأ في جملة \"الأزهارُ في حديقتنا عطرُها فوّاحٌ يسرُّ الناظرين\":",["الأزهارُ (مبتدأ أول)، وعطرُها (مبتدأ ثانٍ)","حديقتنا (مبتدأ مقدم)","الأزهارُ (مبتدأ أول)، فوّاحٌ (مبتدأ ثانٍ)","فوّاحٌ (مبتدأ مؤخر)"]],
-["إعراب كلمة (أبوك) في جملة: \"المديرُ الحازمُ في عمله أبوكَ\":",["مبتدأ مؤخر مرفوع وعلامة رفعه الواو لأنه من الأسماء الخمسة.","خبر المبتدأ مرفوع وعلامة رفعه الواو لأنه من الأسماء الخمسة.","نعت مرفوع وعلامة رفعه الواو لأنه من الأسماء الخمسة.","بدل مرفوع وعلامة رفعه الواو لأنه من الأسماء الخمسة."]],
-["الجملة التي حذفت منها ياء الاسم المنقوص لأنه (مبتدأ نكرة):",["القاضي العادلُ ينصفُ المظلومين.","جاء محامٍ يدافع عن الحق.","في المحكمة قاضٍ عادلٌ.","هذا وادٍ عميقٌ في جنوب البلاد."]],
-["المبتدأ والخبر على التوالي في جملة: \"للقدسِ في نفوسِ العربِ والمسلمين مكانةٌ لا تُنسى\":",["مكانةٌ - للقدسِ","مكانةٌ - في نفوسِ","العربِ - لا تُنسى","للقدسِ - العربِ"]],
-["إعراب كلمة (مرتَعُهُ) في جُملةِ: (الظُّلمُ مرتَعُهُ وخيمٌ):",["مبتدأ أوّل","خبر المبتدأ الأول","خبر المبتدأ الثاني","مبتدأ ثانٍ"]],
-["إعراب كلمة (مبدعان) في جملة: \"هذان الشابان اللذان اخترعا الجهاز مبدعان\":",["فاعل مؤخر مرفوع وعلامة رفعه الألف لأنه مثنى.","نعت مرفوع وعلامة رفعه الألف لأنه مثنى.","خبر المبتدأ مرفوع وعلامة رفعه الألف لأنه مثنى.","مبتدأ ثانٍ مرفوع وعلامة رفعه الألف لأنه مثنى."]],
-["الجملةُ التي جاءَ فيها المبتدأُ نكرةً، هي:",["عرارٌ من شعراءِ الأردنّ الكبارِ.","في المكتبةِ كتبٌ ومعارفُ جمّةٌ.","عمّانُ عاصمةُ العروبةِ.","العلمُ في الصّدورِ."]],
-["إعراب كلمة (مخلصون) في جملة: \"إنّما العاملون في بناء الوطن مخلصون\":",["خبر المبتدأ مرفوع وعلامة رفعه الواو لأنه جمع مذكر سالم.","خبر إنّ مرفوع وعلامة رفعه الواو لأنه جمع مذكر سالم.","نعت مرفوع وعلامة رفعه الواو لأنه جمع مذكر سالم.","مبتدأ مؤخر مرفوع وعلامة رفعه الواو لأنه جمع مذكر سالم."]],
-["الخبر في جملة: \"الوطنيةُ الحقيقيةُ أن تبذلَ كلَّ ما تملك في سبيل رفعة بلادك\":",["الحقيقيةُ (اسم مفرد)","في سبيل (شبه جملة)","كلَّ ما تملك (شبه جملة)","أن تبذلَ (مصدر مؤوّل)"]],
-["سبب تقدّم الخبر في جملة: \"في التواضعِ رفعةٌ لصاحبه\":",["لأن المبتدأ معرفة والخبر شبه جملة.","لأن المبتدأ نكرة والخبر شبه جملة.","لأن المبتدأ نكرة والخبر مفرد.","لأن المبتدأ معرفة والخبر مفرد."]],
-["المبتدأ والخبر وصورتهما في جملة \"نحنُ نزرعُ الأملَ في قلوب اليائسين\":",["نحنُ (اسم إشارة) - نزرعُ (جملة فعلية)","الأملَ (اسم ظاهر) - نزرعُ (جملة فعلية)","نحنُ (ضمير منفصل) - نزرعُ (جملة فعلية)","نحنُ (ضمير متصل) - نزرع (مفرد)"]],
-["الجملة التي جاء فيها المبتدأ مصدرًا مؤوّلًا، والخبر مفردًا، هي:",["أنْ تَصْدُقَ فَضيلَةٌ عَظيمَةٌ.","النَّجاحُ أَنْ تُحافِظَ عَلى النَّجاحِ.","الْمُؤْمِنُ الصّادِقُ إنْ وَعَدَ وَفى.","العِلْمُ إنْ نَفَعَ رَفَعَ قَدْرَ صاحِبِهِ."]],
-["صورةُ الخبرِ في جملةِ: \"المؤمنونَ متسامحونَ بطبعهم\"، هي:",["مفردٌ.","جملةٌ فعليةٌ.","جملةٌ اسميةٌ.","شبهُ جملةٍ."]],
-["الخبر للمبتدأ (القراءة) في جملة: \"القراءةُ المستمرةُ للكتب المتنوعة في العطلة الصيفية تنمّي العقل\":",["المستمرةُ","للكتب المتنوعة","تنمّي العقل","في العطلة"]],
-["الفرق الإعرابي في علامة الرفع بين (الندى) و(القاضي) إذا وقعا مبتدأ:",["كلاهما مرفوع بالضمة المقدرة للتعذر.","كلاهما مرفوع بالضمة المقدرة للثقل.","الندى: مقدرة للثقل، والقاضي: مقدرة للتعذر.","الندى: مقدرة للتعذر، والقاضي: مقدرة للثقل."]],
-["الجملة التي وقع فيها (المصدر المؤول) خبرًا للمبتدأ:",["الإخلاصُ أن تعملَ في السرِّ كما تعمل في العلن.","أن تصدقَ في قولك منجاةٌ لك.","علمنا أنَّ الامتحانَ سهلٌ.","يجبُ أن تدافعَ عن وطنك."]],
-["إعراب كلمة (عظيم) في جملة: \"القائدُ المخلصُ تأثيرُهُ عظيمٌ في أتباعه\":",["صفة مرفوعة للمبتدأ الأول.","خبر المبتدأ الأول مرفوع وعلامة رفعه الضمة.","خبر المبتدأ الثاني مرفوع وعلامة رفعه الضمة.","مبتدأ ثانٍ مؤخر مرفوع وعلامة رفعه الضمة."]],
-["الكلمة التي تعرب (مبتدأ مؤخر) في جملة: \"بين ثنايا الكتبِ القديمةِ حكاياتٌ لا تنتهي\":",["ثنايا","حكاياتٌ","الكتب","القديمة"]],
-["إعراب الجملة الفعلية (تشتدُّ) في قولنا: \"الرياحُ العاتيةُ في فصل الشتاء تشتدُّ ليلًا\":",["في محل نصب حال.","في محل رفع نعت.","في محل جر مضاف إليه.","في محل رفع خبر المبتدأ."]],
-["إعراب كلمة (عيسى) في جملة: \"عيسى طالبٌ مجتهدٌ يطمح لدراسة الطب\":",["مبتدأ مرفوع وعلامة رفعه الضمة المقدرة للتعذر.","مبتدأ مرفوع وعلامة رفعه الضمة المقدرة للثقل.","خبر مقدم مرفوع وعلامة رفعه الضمة المقدرة.","اسم ظاهر مبني في محل رفع مبتدأ."]],
-["المبتدأ في جملة: \"إنّما الصدقُ نجاةٌ من كلّ شرّ\":",["الصدق","إنّما","نجاةٌ","شرّ"]],
-["الخبر وصورته في جملة: \"مفتاحُ النجاحِ بين يديك، فابذل جهدك\":",["النجاحِ / مفرد","بين يديك / شبه جملة ظرفية","جهدك / اسم مفرد","ابذل / جملة فعلية"]],
-["إعراب كلمة (كتابا) في جملة: \"كتابا التاريخِ واللغةِ العربية مفيدان جدًا\":",["مبتدأ مرفوع وعلامة رفعه الفتحة المقدرة.","مبتدأ مرفوع وعلامة رفعه الألف لأنه ملحق بالمثنى.","خبر مقدم مرفوع وعلامة رفعه الألف لأنه مثنى.","مبتدأ مرفوع وعلامة رفعه الألف لأنه مثنى."]],
-["موقع الجملة الاسمية (أخلاقُهم حميدةٌ) في قولنا: \"أبناءُ قريتنا أخلاقُهم حميدةٌ\":",["في محل رفع خبر المبتدأ الأول.","في محل رفع خبر المبتدأ الثاني.","في محل جر مضاف إليه.","في محل نصب صفة."]],
-["إعراب كلمة (وطني) في جملة: \"وطنِي يسكن في وجداني أينما ارتحلت\":",["مبتدأ مرفوع وعلامة رفعه الضمة المقدرة للثقل.","مبتدأ مرفوع وعلامة رفعه الضمة المقدرة للتعذر.","مبتدأ مرفوع وعلامة رفعه الضمة المقدرة لاشتغال المحل بالحركة المناسبة.","مبتدأ مرفوع وعلامة رفعه الياء لأنه مضاف."]],
-["الجملة التي تتضمن (اسمًا موصولًا مبنيًا في محل رفع مبتدأ):",["أحترمُ الذي يفي بوعده.","الذين يخلصون في عملهم ناجحون.","سلمتُ على التي تفوقت في المسابقة.","لعلَّ الذي حضرَ يحمل الأخبار."]],
-["صورة الخبر في جملة: \"الأصدقاءُ الأوفياءُ في أوقات الشدةِ داعمونَ لنا\":",["مفرد","شبه جملة جار ومجرور","شبه جملة ظرفية","جملة فعلية"]],
-["المبتدأ وصورته في جملة: \"أنتم جيلُ المستقبلِ الواعدُ\":",["جيلُ / اسم مفرد","أنتم / اسم إشارة","المستقبلِ / اسم ظاهر","أنتم / ضمير منفصل"]],
-["الضبط الصحيح لآخر الكلمتين (الصدق، منجاة) على الترتيب في جملة \"الصدق منجاة لصاحبه\":",["الصدقَ ، منجاةً","الصدقِ ، منجاةٍ","الصدقُ ، منجاةً","الصدقُ ، منجاةٌ"]]
-];
-
 const AR = n => String(n).replace(/\d/g, d => "٠١٢٣٤٥٦٧٨٩"[d]);
-const LET = ["أ","ب","ج","د"];
-const ALL = [
-  ...TEXTS.map((q,i)=>({id:"t"+(i+1),sec:"t",n:i+1,text:q[0],opts:q[1],ans:LET.indexOf(KEY_T[i])})),
-  ...GRAMMAR.map((q,i)=>({id:"g"+(i+1),sec:"g",n:i+1,text:q[0],opts:q[1],ans:LET.indexOf(KEY_G[i])}))
-];
-const SECNAME = {t:"النصوص", g:"القواعد"};
+const LET = ["أ","ب","ج","د","هـ","و"];
+const SITE_URL = location.origin + location.pathname.replace(/[^/]*$/, "");
+const $ = s => document.querySelector(s);
+const esc = s => String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
 const store = {
   get(k){try{return JSON.parse(localStorage.getItem(k))}catch(e){return null}},
   set(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}},
   del(k){try{localStorage.removeItem(k)}catch(e){}}
 };
-const SKEY = "unit3-exam-v1";
-const $ = s => document.querySelector(s);
-const esc = s => s.replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const sessKey = id => "exam-sess-"+id, bestKey = id => "exam-best-"+id;
 
+let INDEX = null;      // exams.json
+let EX = null;         // current exam data
+let QMAP = {};         // id -> question (with sec + n)
+let SECNAME = {};
 let cfg = {sec:"all", mode:"exam", shuffle:false};
-let S = null; // {ids, answers:{}, flags:{}, i, elapsed, mode, sec, done}
+let S = null;          // session
 let tick = null;
 
 function fmt(s){const m=Math.floor(s/60), x=s%60; return AR(String(m).padStart(2,"0")+":"+String(x).padStart(2,"0"));}
-function qById(id){return ALL.find(q=>q.id===id)}
-function show(id){["start","quiz","results"].forEach(x=>$("#"+x).classList.toggle("hidden",x!==id)); window.scrollTo(0,0);}
+const qById = id => QMAP[id];
+function show(id){["home","start","quiz","results"].forEach(x=>$("#"+x).classList.toggle("hidden",x!==id)); window.scrollTo(0,0);}
+async function getJSON(url){ const r = await fetch(url, {cache:"no-cache"}); if(!r.ok) throw new Error(r.status); return r.json(); }
 
-/* ---- start screen ---- */
-function pick(groupSel, attr, val){
-  document.querySelectorAll(groupSel+" [data-"+attr+"]").forEach(b=>b.setAttribute("aria-pressed", b.dataset[attr]===val));
+/* ================= HOME ================= */
+async function loadIndex(){
+  if(INDEX) return INDEX;
+  INDEX = await getJSON("exams.json?t="+Date.now());
+  const st = INDEX.site||{};
+  $("#siteTitle").textContent = st.title||"منصّة الامتحانات";
+  $("#siteSub").textContent = st.subtitle||"";
+  $("#siteTeacher").textContent = st.teacher||"";
+  const n=(INDEX.exams||[]).filter(e=>e.visible!==false).length;
+  $("#siteEyebrow").textContent = n===1?"امتحان واحد متاح":n===2?"امتحانان متاحان":n<=10?AR(n)+" امتحانات متاحة":AR(n)+" امتحانًا متاحًا";
+  document.title = st.title||document.title;
+  return INDEX;
 }
-document.querySelectorAll("[data-sec]").forEach(b=>b.onclick=()=>{cfg.sec=b.dataset.sec;pick("#secChoices","sec",cfg.sec)});
-document.querySelectorAll("[data-mode]").forEach(b=>b.onclick=()=>{cfg.mode=b.dataset.mode;pick("#modeChoices","mode",cfg.mode)});
+function renderHome(){
+  const list = (INDEX.exams||[]).filter(e=>e.visible!==false);
+  if(!list.length){ $("#examList").innerHTML = `<div class="card err">لا توجد امتحانات متاحة حاليًا</div>`; return; }
+  $("#examList").innerHTML = list.map((e,i)=>{
+    const best = store.get(bestKey(e.id)), sess = store.get(sessKey(e.id));
+    const inprog = sess && !sess.done && sess.answers && Object.keys(sess.answers).length;
+    return `<button class="exam-card" data-id="${esc(e.id)}" style="animation-delay:${i*.04}s">
+      <span class="num">${AR(i+1)}</span>
+      <span class="body"><h3>${esc(e.title)}</h3>${e.desc?`<p>${esc(e.desc)}</p>`:""}
+        <span class="meta"><span class="chip">${AR(e.count||0)} سؤال</span>
+        ${best?`<span class="chip best">أفضل نتيجة ${AR(best.pct)}٪</span>`:""}
+        ${inprog?`<span class="chip prog">قيد الحل</span>`:""}</span></span>
+      <span class="go">‹</span></button>`;
+  }).join("");
+  document.querySelectorAll(".exam-card").forEach(b=>b.onclick=()=>{ location.hash = "exam-"+b.dataset.id; });
+}
+
+/* ================= EXAM LOAD ================= */
+async function openExam(id){
+  await loadIndex();
+  const meta = (INDEX.exams||[]).find(e=>e.id===id);
+  if(!meta){ location.hash=""; return; }
+  if(!EX || EX.id!==id){
+    show("home"); $("#examList").innerHTML = `<div class="loading"><div class="spinner"></div>جاري تحميل الامتحان…</div>`;
+    EX = await getJSON("exams/"+encodeURIComponent(id)+".json?v="+(meta.v||1));
+    QMAP = {}; SECNAME = {};
+    (EX.sections||[]).forEach(s=>SECNAME[s.id]=s.name);
+    const cnt = {};
+    EX.questions.forEach(q=>{ cnt[q.s]=(cnt[q.s]||0)+1; QMAP[q.id] = {id:q.id, sec:q.s, n:cnt[q.s], text:q.q, opts:q.o, ans:q.a}; });
+    EX.counts = cnt;
+  }
+  cfg.sec="all";
+  const s = store.get(sessKey(id));
+  if(s && s.done && s.ids && s.ids.every(x=>QMAP[x]) && location.hash.endsWith("/result")){ S=s; renderResults(); show("results"); return; }
+  renderStart();
+  show("start");
+}
+function renderStart(){
+  const secs = EX.sections||[], total = EX.questions.length;
+  $("#exTitle").textContent = EX.title;
+  $("#exDesc").textContent = EX.desc||"";
+  $("#exEyebrow").textContent = (INDEX.site&&INDEX.site.teacher) ? INDEX.site.teacher : "امتحان";
+  $("#exStats").innerHTML = `<div class="stat"><b>${AR(total)}</b><span>سؤال</span></div>` +
+    (secs.length>1 ? secs.map(s=>`<div class="stat"><b>${AR(EX.counts[s.id]||0)}</b><span>${esc(s.name)}</span></div>`).join("") : "");
+  $("#secWrap").classList.toggle("hidden", secs.length<2);
+  if(secs.length>1){
+    let h = `<button class="choice" data-sec="all" aria-pressed="true"><span class="ic">📚</span><span><b>الامتحان كاملًا</b><small>${AR(total)} سؤال</small></span></button><div class="choices two">`;
+    const icons=["📖","✍️","🧩","🎯","📘","🧠"];
+    secs.forEach((s,i)=>{ h+=`<button class="choice" data-sec="${esc(s.id)}" aria-pressed="false"><span class="ic">${icons[i%icons.length]}</span><span><b>${esc(s.name)}</b><small>${AR(EX.counts[s.id]||0)} سؤال</small></span></button>`; });
+    $("#secChoices").innerHTML = h+"</div>";
+    document.querySelectorAll("[data-sec]").forEach(b=>b.onclick=()=>{cfg.sec=b.dataset.sec;document.querySelectorAll("[data-sec]").forEach(x=>x.setAttribute("aria-pressed",x===b))});
+  }
+  renderResume();
+}
+$("#backHome").onclick=()=>{ location.hash=""; };
+document.querySelectorAll("[data-mode]").forEach(b=>b.onclick=()=>{cfg.mode=b.dataset.mode;document.querySelectorAll("[data-mode]").forEach(x=>x.setAttribute("aria-pressed",x===b))});
 $("#shuffleSw").onclick=e=>{cfg.shuffle=!cfg.shuffle;e.currentTarget.setAttribute("aria-checked",cfg.shuffle)};
 $("#startBtn").onclick=()=>{
-  let ids = ALL.filter(q=>cfg.sec==="all"||q.sec===cfg.sec).map(q=>q.id);
+  const ids = EX.questions.filter(q=>cfg.sec==="all"||q.s===cfg.sec).map(q=>q.id);
   newSession(ids, cfg.mode, cfg.sec);
 };
 function newSession(ids, mode, sec){
+  ids = ids.slice();
   if(cfg.shuffle){for(let i=ids.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[ids[i],ids[j]]=[ids[j],ids[i]]}}
-  S = {ids, answers:{}, flags:{}, i:0, elapsed:0, mode, sec, done:false};
+  S = {exam:EX.id, ids, answers:{}, flags:{}, i:0, elapsed:0, mode, sec, done:false};
   save(); startQuiz();
 }
 function renderResume(){
-  const s = store.get(SKEY); const box = $("#resumeBox");
-  if(s && !s.done && s.ids && Object.keys(s.answers).length){
+  const s = store.get(sessKey(EX.id)); const box = $("#resumeBox");
+  if(s && !s.done && s.ids && s.ids.every(x=>QMAP[x]) && Object.keys(s.answers).length){
     const n=Object.keys(s.answers).length;
     box.innerHTML = `<div class="card resume"><span><b>عندك امتحان لم يكتمل</b><br><small style="color:var(--muted)">أجبت ${AR(n)} من ${AR(s.ids.length)} · ${fmt(s.elapsed)}</small></span><span style="display:flex;gap:8px"><button class="btn ghost" id="discard" style="padding:10px 12px">حذف</button><button class="btn primary" id="resume" style="padding:10px 14px">أكمل</button></span></div>`;
     $("#resume").onclick=()=>{S=s;startQuiz()};
-    $("#discard").onclick=()=>{store.del(SKEY);box.innerHTML=""};
+    $("#discard").onclick=()=>{store.del(sessKey(EX.id));box.innerHTML=""};
   } else box.innerHTML="";
 }
-function save(){ if(S) store.set(SKEY,S); }
+function save(){ if(S) store.set(sessKey(S.exam),S); }
 
-/* ---- quiz ---- */
+/* ================= QUIZ ================= */
 function startQuiz(){
+  if(!location.hash.startsWith("#exam-"+EX.id)) history.replaceState(null,"","#exam-"+EX.id);
   show("quiz"); renderQ();
   clearInterval(tick);
   tick = setInterval(()=>{if(document.hidden||!S||S.done)return; S.elapsed++; $("#timer").textContent=fmt(S.elapsed); if(S.elapsed%5===0) save();},1000);
   $("#timer").textContent=fmt(S.elapsed);
+}
+function qHTML(q){
+  let parts = esc(q.text).split("\n");
+  return parts.length>1 ? `<span class="quote">${parts[0]}</span>${parts.slice(1).join("<br>")}` : parts[0];
 }
 function renderQ(){
   const q = qById(S.ids[S.i]); const a = S.answers[q.id]; const total=S.ids.length;
@@ -415,14 +237,10 @@ function renderQ(){
     const right = S.ids.filter(id=>S.answers[id]!==undefined && S.answers[id]===qById(id).ans).length;
     $("#scorePill").style.display=""; $("#scorePill").innerHTML = `✓ ${AR(right)} <span style="color:var(--muted)">·</span> ✗ ${AR(answered-right)}`;
   } else $("#scorePill").style.display="none";
-
-  let txt = esc(q.text);
-  const parts = txt.split("\n");
-  if(parts.length>1) txt = `<span class="quote">${parts[0]}</span>${parts.slice(1).join("<br>")}`;
-
-  let html = `<div class="qmeta"><span class="tag">${SECNAME[q.sec]} · س${AR(q.n)}</span>
+  const tag = (EX.sections||[]).length>1 ? `${esc(SECNAME[q.sec]||"")} · س${AR(q.n)}` : `س${AR(q.n)}`;
+  let html = `<div class="qmeta"><span class="tag">${tag}</span>
     <button class="flag" id="flagBtn" aria-pressed="${!!S.flags[q.id]}">${S.flags[q.id]?"★ مُعلَّم":"☆ علّم للمراجعة"}</button></div>
-    <div class="qtext">${txt}</div><div class="opts">`;
+    <div class="qtext">${qHTML(q)}</div><div class="opts">`;
   q.opts.forEach((o,k)=>{
     let cls="opt";
     if(locked){ if(k===q.ans) cls+=" right"; else if(k===a) cls+=" wrong"; }
@@ -442,6 +260,7 @@ function renderQ(){
 }
 function choose(k){
   const q = qById(S.ids[S.i]);
+  if(k>=q.opts.length) return;
   if(S.mode==="practice" && S.answers[q.id]!==undefined) return;
   S.answers[q.id]=k; save(); renderQ();
   if(S.mode==="exam" && S.i < S.ids.length-1) setTimeout(()=>{ if(S && !S.done && S.ids[S.i]===q.id){S.i++;save();renderQ();window.scrollTo({top:0,behavior:"smooth"});} }, 260);
@@ -456,39 +275,22 @@ document.addEventListener("keydown",e=>{
   const ov = $("#ov");
   if(e.key==="Escape" && ov){ closeLayer(); return; }
   if(ov) return;
-  const map={"1":0,"2":1,"3":2,"4":3,"أ":0,"ب":1,"ج":2,"د":3};
+  const map={"1":0,"2":1,"3":2,"4":3,"5":4,"6":5,"أ":0,"ب":1,"ج":2,"د":3};
   if(e.key in map){ e.preventDefault(); choose(map[e.key]); }
   else if(e.key==="ArrowLeft"||e.key==="Enter"){ e.preventDefault(); $("#nextBtn").click(); }
   else if(e.key==="ArrowRight"){ e.preventDefault(); $("#prevBtn").click(); }
   else if(e.key.toLowerCase()==="f"){ $("#flagBtn")?.click(); }
   else if(e.key.toLowerCase()==="m"){ openGrid(); }
 });
-function toast(msg){ const t=document.createElement("div"); t.className="toast"; t.textContent=msg; document.body.appendChild(t); setTimeout(()=>t.remove(),2200); }
-function confetti(){
-  if(matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-  const c=$("#confetti"), x=c.getContext("2d"), dpr=devicePixelRatio||1;
-  c.width=innerWidth*dpr; c.height=innerHeight*dpr; x.scale(dpr,dpr);
-  const cols=["#8a1d5c","#e05aa3","#1f8a5b","#f2b632","#3b82f6"];
-  const P=Array.from({length:140},()=>({x:innerWidth/2+(Math.random()-.5)*120,y:innerHeight*.35,vx:(Math.random()-.5)*12,vy:-Math.random()*13-4,r:Math.random()*6+4,c:cols[Math.random()*5|0],a:Math.random()*6,va:(Math.random()-.5)*.3}));
-  let f=0; (function step(){ x.clearRect(0,0,innerWidth,innerHeight);
-    P.forEach(p=>{p.vy+=.35;p.vx*=.99;p.x+=p.vx;p.y+=p.vy;p.a+=p.va;x.save();x.translate(p.x,p.y);x.rotate(p.a);x.fillStyle=p.c;x.fillRect(-p.r/2,-p.r/4,p.r,p.r/2);x.restore();});
-    if(++f<150) requestAnimationFrame(step); else x.clearRect(0,0,innerWidth,innerHeight); })();
-}
-async function shareResult(right,tot,pct){
-  const url="https://imissherhz-source.github.io/unit3-exam/";
-  const text=`جبت ${AR(right)} من ${AR(tot)} (${AR(pct)}٪) في امتحان الوحدة الثالثة 📚 جرّب حظك:`;
-  try{ if(navigator.share){ await navigator.share({title:"امتحان الوحدة الثالثة",text,url}); return; } }catch(e){ if(e.name==="AbortError") return; }
-  try{ await navigator.clipboard.writeText(text+" "+url); toast("انتسخت النتيجة مع الرابط ✓"); }catch(e){ toast(url); }
-}
-
 function closeLayer(){ $("#layer").innerHTML=""; }
 function openGrid(){
   const groups = {};
   S.ids.forEach((id,idx)=>{const q=qById(id);(groups[q.sec]=groups[q.sec]||[]).push([id,idx])});
+  const multi = Object.keys(groups).length>1;
   let h = `<div class="overlay" id="ov"><div class="sheet"><h3>خريطة الأسئلة</h3>
    <div class="legend"><span><i style="background:var(--brand-soft);border:1.5px solid var(--brand)"></i>مُجاب</span><span><i style="border:1.5px solid var(--line)"></i>لم يُجب</span><span><i style="background:var(--warn);border-radius:50%"></i>مُعلَّم</span></div>`;
   for(const sec of Object.keys(groups)){
-    if(Object.keys(groups).length>1) h+=`<div class="grid-head">${SECNAME[sec]}</div>`;
+    if(multi) h+=`<div class="grid-head">${esc(SECNAME[sec]||"")}</div>`;
     h+=`<div class="grid10">`;
     groups[sec].forEach(([id,idx])=>{
       const q=qById(id), a=S.answers[id];
@@ -516,10 +318,12 @@ function confirmFinish(){
   $("#cBack").onclick=closeLayer; $("#cGo").onclick=()=>{closeLayer();finish()};
 }
 
-/* ---- results ---- */
+/* ================= RESULTS ================= */
 let rvFilter="wrong";
 function finish(){
-  clearInterval(tick); S.done=true; save(); renderResults(); show("results");
+  clearInterval(tick); S.done=true; save();
+  history.replaceState(null,"","#exam-"+S.exam+"/result");
+  renderResults(); show("results");
 }
 function gradeOf(p){
   if(p>=95) return ["ممتاز جدًا! 🏆","أداء استثنائي، أنت جاهز تمامًا."];
@@ -536,15 +340,23 @@ function renderResults(){
     per[q.sec]=per[q.sec]||{r:0,t:0}; per[q.sec].t++;
     if(a===undefined) skip++; else if(a===q.ans){right++;per[q.sec].r++} else wrong++;});
   const pct = Math.round(right/tot*1000)/10;
+  // best score only for full-length attempts of the whole exam
+  if(S.sec==="all" && tot===EX.questions.length){
+    const b = store.get(bestKey(S.exam));
+    if(!b || pct > b.pct){ store.set(bestKey(S.exam), {pct, right, tot}); S.newBest = !!b; }
+  }
   const [g,gs]=gradeOf(pct);
   const C=2*Math.PI*72, off=C*(1-right/tot);
   const color = pct>=75?"var(--ok)":pct>=50?"var(--warn)":"var(--bad)";
-  let h = `<div class="card result-hero">
-    <span class="eyebrow">${S.sec==="all"?"الامتحان كاملًا":"قسم "+SECNAME[S.sec]} · ${S.mode==="practice"?"تدريب":"امتحان"}</span>
+  const scope = S.sec==="all" ? "الامتحان كاملًا" : "قسم "+(SECNAME[S.sec]||"");
+  let h = `<button class="back" id="resHome">→ كل الامتحانات</button>
+   <div class="card result-hero">
+    <span class="eyebrow">${esc(EX.title)} · ${scope} · ${S.mode==="practice"?"تدريب":"امتحان"}</span>
     <div class="ring"><svg width="170" height="170" viewBox="0 0 170 170"><circle cx="85" cy="85" r="72" fill="none" stroke="var(--line)" stroke-width="14"/>
       <circle cx="85" cy="85" r="72" fill="none" stroke="${color}" stroke-width="14" stroke-linecap="round" stroke-dasharray="${C}" stroke-dashoffset="${C}" id="arc" style="transition:stroke-dashoffset 1.1s cubic-bezier(.2,.8,.2,1)"/></svg>
       <div class="val"><b>${AR(right)}<span style="font-size:20px;color:var(--muted)">/${AR(tot)}</span></b><span>${AR(pct)}٪</span></div></div>
     <div class="grade">${g}</div><p class="sub">${gs}</p>
+    ${S.newBest?`<p class="sub" style="color:var(--ok);font-weight:700;margin-top:6px">🎉 رقم قياسي جديد لك!</p>`:""}
     <div class="breakdown">
       <div class="bd"><b style="color:var(--ok)">${AR(right)}</b><span>صحيحة</span></div>
       <div class="bd"><b style="color:var(--bad)">${AR(wrong)}</b><span>خاطئة</span></div>
@@ -554,12 +366,12 @@ function renderResults(){
   </div>`;
   if(Object.keys(per).length>1){
     h+=`<div class="card secbars">`;
-    for(const s of Object.keys(per)){const p=per[s];h+=`<div class="sb"><div class="h"><span>${SECNAME[s]}</span><span>${AR(p.r)} / ${AR(p.t)} · ${AR(Math.round(p.r/p.t*100))}٪</span></div><div class="bar"><i style="width:${p.r/p.t*100}%"></i></div></div>`}
+    for(const s of Object.keys(per)){const p=per[s];h+=`<div class="sb"><div class="h"><span>${esc(SECNAME[s]||"")}</span><span>${AR(p.r)} / ${AR(p.t)} · ${AR(Math.round(p.r/p.t*100))}٪</span></div><div class="bar"><i style="width:${p.r/p.t*100}%"></i></div></div>`}
     h+=`</div>`;
   }
   h+=`<div class="actions">
     <button class="btn primary" id="retryWrong" ${wrong+skip?"":"disabled style='opacity:.5'"}>أعد الأخطاء (${AR(wrong+skip)})</button>
-    <button class="btn ghost" id="again">امتحان جديد</button></div>
+    <button class="btn ghost" id="again">حلّ من جديد</button></div>
     <div class="share-row"><button class="btn ghost" id="shareBtn">📤 شارك نتيجتك مع أصحابك</button></div>
     <div class="tabs" role="tablist">
       <button class="tab" data-f="wrong" aria-selected="${rvFilter==="wrong"}">الأخطاء (${AR(wrong+skip)})</button>
@@ -567,12 +379,13 @@ function renderResults(){
       <button class="tab" data-f="all" aria-selected="${rvFilter==="all"}">كل الأسئلة</button>
     </div><div id="rvList"></div>`;
   $("#results").innerHTML=h;
-  requestAnimationFrame(()=>requestAnimationFrame(()=>{$("#arc").style.strokeDashoffset=off}));
+  requestAnimationFrame(()=>requestAnimationFrame(()=>{const a=$("#arc"); if(a) a.style.strokeDashoffset=off}));
   document.querySelectorAll(".tab").forEach(t=>t.onclick=()=>{rvFilter=t.dataset.f;document.querySelectorAll(".tab").forEach(x=>x.setAttribute("aria-selected",x===t));renderReview()});
+  $("#resHome").onclick=()=>{ location.hash=""; };
   $("#shareBtn").onclick=()=>shareResult(right,tot,pct);
   if(pct>=85 && !S.celebrated){ S.celebrated=true; save(); setTimeout(confetti,400); }
-  $("#again").onclick=()=>{store.del(SKEY);S=null;renderResume();show("start")};
-  $("#retryWrong").onclick=()=>{const ids=S.ids.filter(id=>S.answers[id]!==qById(id).ans);if(ids.length){const sec=S.sec;newSession(ids,S.mode,sec)}};
+  $("#again").onclick=()=>{store.del(sessKey(S.exam));S=null;history.replaceState(null,"","#exam-"+EX.id);renderStart();show("start")};
+  $("#retryWrong").onclick=()=>{const ids=S.ids.filter(id=>S.answers[id]!==qById(id).ans);if(ids.length){newSession(ids,S.mode,S.sec)}};
   renderReview();
 }
 function renderReview(){
@@ -582,20 +395,51 @@ function renderReview(){
   $("#rvList").innerHTML = list.map(id=>{
     const q=qById(id), a=S.answers[id];
     const st = a===undefined?`<span class="status skip">بدون إجابة</span>`: a===q.ans?`<span class="status ok">صحيحة</span>`:`<span class="status no">خاطئة</span>`;
-    let t=esc(q.text).split("\n"); t = t.length>1?`<span class="quote">${t[0]}</span>${t.slice(1).join("<br>")}`:t[0];
-    return `<div class="card rv"><div class="qmeta"><span class="tag">${SECNAME[q.sec]} · س${AR(q.n)}</span>${st}</div>
-      <div class="qtext">${t}</div><div class="opts">${q.opts.map((o,k)=>{
+    const tag = (EX.sections||[]).length>1 ? `${esc(SECNAME[q.sec]||"")} · س${AR(q.n)}` : `س${AR(q.n)}`;
+    return `<div class="card rv"><div class="qmeta"><span class="tag">${tag}</span>${st}</div>
+      <div class="qtext">${qHTML(q)}</div><div class="opts">${q.opts.map((o,k)=>{
         let c="opt"; if(k===q.ans)c+=" right"; else if(k===a)c+=" wrong";
         return `<div class="${c}"><span class="L">${LET[k]}</span><span>${esc(o)}</span></div>`}).join("")}</div></div>`;
   }).join("");
 }
+function toast(msg){ const t=document.createElement("div"); t.className="toast"; t.textContent=msg; document.body.appendChild(t); setTimeout(()=>t.remove(),2200); }
+function confetti(){
+  if(matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  const c=$("#confetti"), x=c.getContext("2d"), dpr=devicePixelRatio||1;
+  c.width=innerWidth*dpr; c.height=innerHeight*dpr; x.setTransform(dpr,0,0,dpr,0,0);
+  const cols=["#8a1d5c","#e05aa3","#1f8a5b","#f2b632","#3b82f6"];
+  const P=Array.from({length:140},()=>({x:innerWidth/2+(Math.random()-.5)*120,y:innerHeight*.35,vx:(Math.random()-.5)*12,vy:-Math.random()*13-4,r:Math.random()*6+4,c:cols[Math.random()*5|0],a:Math.random()*6,va:(Math.random()-.5)*.3}));
+  let f=0; (function step(){ x.clearRect(0,0,innerWidth,innerHeight);
+    P.forEach(p=>{p.vy+=.35;p.vx*=.99;p.x+=p.vx;p.y+=p.vy;p.a+=p.va;x.save();x.translate(p.x,p.y);x.rotate(p.a);x.fillStyle=p.c;x.fillRect(-p.r/2,-p.r/4,p.r,p.r/2);x.restore();});
+    if(++f<150) requestAnimationFrame(step); else x.clearRect(0,0,innerWidth,innerHeight); })();
+}
+async function shareResult(right,tot,pct){
+  const url=SITE_URL+"#exam-"+EX.id;
+  const text=`جبت ${AR(right)} من ${AR(tot)} (${AR(pct)}٪) في «${EX.title}» 📚 جرّب حظك:`;
+  try{ if(navigator.share){ await navigator.share({title:EX.title,text,url}); return; } }catch(e){ if(e.name==="AbortError") return; }
+  try{ await navigator.clipboard.writeText(text+" "+url); toast("انتسخت النتيجة مع الرابط ✓"); }catch(e){ toast(url); }
+}
 
-/* init */
-(function(){
-  const s=store.get(SKEY);
-  if(s && s.done && s.ids){S=s;renderResults();show("results");}
-  else renderResume();
-})();
+/* ================= ROUTER ================= */
+async function route(){
+  const h = decodeURIComponent(location.hash.slice(1));
+  try{
+    if(h.startsWith("exam-")){
+      const id = h.slice(5).split("/")[0];
+      if(S && !S.done && S.exam===id && !$("#quiz").classList.contains("hidden")) return;
+      clearInterval(tick);
+      await openExam(id);
+    } else {
+      clearInterval(tick); S=null;
+      await loadIndex(); renderHome(); show("home");
+    }
+  }catch(e){
+    show("home");
+    $("#examList").innerHTML = `<div class="card err">تعذّر التحميل، تأكد من الإنترنت ثم <button class="btn ghost" onclick="location.reload()" style="margin-top:10px">أعد المحاولة</button></div>`;
+  }
+}
+window.addEventListener("hashchange", route);
+route();
 </script>
 </body>
 </html>
