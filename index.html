@@ -2,11 +2,25 @@
 <html lang="ar" dir="rtl">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>امتحان الوحدة الثالثة — 100 سؤال</title>
+<meta name="description" content="امتحان تفاعلي شامل للوحدة الثالثة: نص «فيض العدوى» والمبتدأ والخبر — 100 سؤال مع النتيجة الفورية ومراجعة الأخطاء.">
+<meta name="theme-color" content="#8a1d5c" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#151116" media="(prefers-color-scheme: dark)">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="امتحان الوحدة ٣">
+<meta property="og:type" content="website">
+<meta property="og:title" content="امتحان الوحدة الثالثة — 100 سؤال">
+<meta property="og:description" content="حلّ الامتحان أونلاين واعرف نتيجتك فورًا · نصوص وقواعد">
+<meta property="og:image" content="https://imissherhz-source.github.io/unit3-exam/og.png">
+<meta property="og:url" content="https://imissherhz-source.github.io/unit3-exam/">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=Noto+Naskh+Arabic:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=Noto+Naskh+Arabic:wght@500;600;700&display=swap">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=Noto+Naskh+Arabic:wght@500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
 <style>
 :root{
   --bg:#f7f3ef; --surface:#ffffff; --surface-2:#fbf8f5; --ink:#211a22; --muted:#6f6470; --line:#e8e0e3;
@@ -136,6 +150,22 @@ h1{font-family:"Noto Naskh Arabic",serif;font-size:30px;margin:12px 0 4px;line-h
 .status.ok{background:var(--ok-soft);color:var(--ok)}.status.no{background:var(--bad-soft);color:var(--bad)}.status.skip{background:var(--surface-2);color:var(--muted);border:1px solid var(--line)}
 .empty{text-align:center;color:var(--muted);padding:30px}
 .foot{text-align:center;color:var(--muted);font-size:12.5px;margin-top:22px}
+.pill{min-height:40px}
+button.pill{min-width:56px;justify-content:center}
+.flag{min-height:40px}
+:focus-visible{outline:3px solid var(--brand-2);outline-offset:2px;border-radius:12px}
+.opt{animation:in .25s both}
+.opt:nth-child(2){animation-delay:.03s}.opt:nth-child(3){animation-delay:.06s}.opt:nth-child(4){animation-delay:.09s}
+.opt:active:not([disabled]){transform:scale(.985)}
+@keyframes in{from{opacity:0;transform:translateY(6px)}}
+.kbd{display:none;color:var(--muted);font-size:12.5px;text-align:center;margin-top:12px}
+.kbd b{display:inline-block;min-width:22px;padding:0 6px;border:1px solid var(--line);border-bottom-width:2px;border-radius:6px;background:var(--surface);font-size:12px;margin:0 2px}
+@media (hover:hover) and (pointer:fine){.kbd{display:block}}
+.hero::after{content:"";position:absolute;inset:auto -40px -60px auto;width:180px;height:180px;border-radius:50%;background:radial-gradient(circle,var(--brand-soft),transparent 70%);pointer-events:none}
+#confetti{position:fixed;inset:0;pointer-events:none;z-index:50}
+.share-row{display:grid;grid-template-columns:1fr;gap:10px;margin-top:10px}
+.toast{position:fixed;bottom:calc(24px + env(safe-area-inset-bottom));left:50%;transform:translateX(-50%);background:var(--ink);color:var(--bg);padding:10px 18px;border-radius:99px;font-weight:600;font-size:14px;z-index:60;animation:pop .2s}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
 @media (max-width:420px){h1{font-size:25px}.qtext{font-size:18.5px}.opt{font-size:15.5px}.choices.two{grid-template-columns:1fr}}
 </style>
 </head>
@@ -191,7 +221,8 @@ h1{font-family:"Noto Naskh Arabic",serif;font-size:30px;margin:12px 0 4px;line-h
     <div class="progress"><i id="prog"></i></div>
   </div></div>
   <div class="wrap" style="padding-top:0">
-    <div class="card qcard" id="qcard"></div>
+    <div class="card qcard" id="qcard" aria-live="polite"></div>
+    <div class="kbd">اختصارات: <b>1</b>–<b>4</b> للاختيار · <b>←</b> التالي · <b>→</b> السابق · <b>F</b> تعليم · <b>M</b> الخريطة</div>
   </div>
   <div class="navbar"><div class="in">
     <button class="btn ghost" id="prevBtn">→ السابق</button>
@@ -204,6 +235,7 @@ h1{font-family:"Noto Naskh Arabic",serif;font-size:30px;margin:12px 0 4px;line-h
 <section id="results" class="wrap hidden"></section>
 
 <div id="layer"></div>
+<canvas id="confetti" aria-hidden="true"></canvas>
 
 <script>
 const KEY_T = "ج ب د ب أ ج ج د أ د ب ب ج ب ب ب ج أ ج أ ج ب د ب ب ج ب ج ج ب ب د ب أ ب أ د ج أ د ج أ ج ج ج ب د د أ د".split(" ");
@@ -370,7 +402,7 @@ function save(){ if(S) store.set(SKEY,S); }
 function startQuiz(){
   show("quiz"); renderQ();
   clearInterval(tick);
-  tick = setInterval(()=>{S.elapsed++; $("#timer").textContent=fmt(S.elapsed); if(S.elapsed%5===0) save();},1000);
+  tick = setInterval(()=>{if(document.hidden||!S||S.done)return; S.elapsed++; $("#timer").textContent=fmt(S.elapsed); if(S.elapsed%5===0) save();},1000);
   $("#timer").textContent=fmt(S.elapsed);
 }
 function renderQ(){
@@ -412,12 +444,42 @@ function choose(k){
   const q = qById(S.ids[S.i]);
   if(S.mode==="practice" && S.answers[q.id]!==undefined) return;
   S.answers[q.id]=k; save(); renderQ();
-  if(S.mode==="exam" && S.i < S.ids.length-1) setTimeout(()=>{ if(qById(S.ids[S.i]).id===q.id){S.i++;renderQ();window.scrollTo({top:0,behavior:"smooth"});} }, 260);
+  if(S.mode==="exam" && S.i < S.ids.length-1) setTimeout(()=>{ if(S && !S.done && S.ids[S.i]===q.id){S.i++;save();renderQ();window.scrollTo({top:0,behavior:"smooth"});} }, 260);
 }
 $("#prevBtn").onclick=()=>{ if(S.i>0){S.i--;save();renderQ();window.scrollTo(0,0);} };
 $("#nextBtn").onclick=()=>{ if(S.i<S.ids.length-1){S.i++;save();renderQ();window.scrollTo(0,0);} else confirmFinish(); };
 $("#finishTop").onclick=confirmFinish;
 $("#gridBtn").onclick=openGrid;
+document.addEventListener("visibilitychange",()=>{ if(document.hidden) save(); });
+document.addEventListener("keydown",e=>{
+  if($("#quiz").classList.contains("hidden") || e.ctrlKey || e.metaKey || e.altKey) return;
+  const ov = $("#ov");
+  if(e.key==="Escape" && ov){ closeLayer(); return; }
+  if(ov) return;
+  const map={"1":0,"2":1,"3":2,"4":3,"أ":0,"ب":1,"ج":2,"د":3};
+  if(e.key in map){ e.preventDefault(); choose(map[e.key]); }
+  else if(e.key==="ArrowLeft"||e.key==="Enter"){ e.preventDefault(); $("#nextBtn").click(); }
+  else if(e.key==="ArrowRight"){ e.preventDefault(); $("#prevBtn").click(); }
+  else if(e.key.toLowerCase()==="f"){ $("#flagBtn")?.click(); }
+  else if(e.key.toLowerCase()==="m"){ openGrid(); }
+});
+function toast(msg){ const t=document.createElement("div"); t.className="toast"; t.textContent=msg; document.body.appendChild(t); setTimeout(()=>t.remove(),2200); }
+function confetti(){
+  if(matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  const c=$("#confetti"), x=c.getContext("2d"), dpr=devicePixelRatio||1;
+  c.width=innerWidth*dpr; c.height=innerHeight*dpr; x.scale(dpr,dpr);
+  const cols=["#8a1d5c","#e05aa3","#1f8a5b","#f2b632","#3b82f6"];
+  const P=Array.from({length:140},()=>({x:innerWidth/2+(Math.random()-.5)*120,y:innerHeight*.35,vx:(Math.random()-.5)*12,vy:-Math.random()*13-4,r:Math.random()*6+4,c:cols[Math.random()*5|0],a:Math.random()*6,va:(Math.random()-.5)*.3}));
+  let f=0; (function step(){ x.clearRect(0,0,innerWidth,innerHeight);
+    P.forEach(p=>{p.vy+=.35;p.vx*=.99;p.x+=p.vx;p.y+=p.vy;p.a+=p.va;x.save();x.translate(p.x,p.y);x.rotate(p.a);x.fillStyle=p.c;x.fillRect(-p.r/2,-p.r/4,p.r,p.r/2);x.restore();});
+    if(++f<150) requestAnimationFrame(step); else x.clearRect(0,0,innerWidth,innerHeight); })();
+}
+async function shareResult(right,tot,pct){
+  const url="https://imissherhz-source.github.io/unit3-exam/";
+  const text=`جبت ${AR(right)} من ${AR(tot)} (${AR(pct)}٪) في امتحان الوحدة الثالثة 📚 جرّب حظك:`;
+  try{ if(navigator.share){ await navigator.share({title:"امتحان الوحدة الثالثة",text,url}); return; } }catch(e){ if(e.name==="AbortError") return; }
+  try{ await navigator.clipboard.writeText(text+" "+url); toast("انتسخت النتيجة مع الرابط ✓"); }catch(e){ toast(url); }
+}
 
 function closeLayer(){ $("#layer").innerHTML=""; }
 function openGrid(){
@@ -498,6 +560,7 @@ function renderResults(){
   h+=`<div class="actions">
     <button class="btn primary" id="retryWrong" ${wrong+skip?"":"disabled style='opacity:.5'"}>أعد الأخطاء (${AR(wrong+skip)})</button>
     <button class="btn ghost" id="again">امتحان جديد</button></div>
+    <div class="share-row"><button class="btn ghost" id="shareBtn">📤 شارك نتيجتك مع أصحابك</button></div>
     <div class="tabs" role="tablist">
       <button class="tab" data-f="wrong" aria-selected="${rvFilter==="wrong"}">الأخطاء (${AR(wrong+skip)})</button>
       <button class="tab" data-f="flag" aria-selected="${rvFilter==="flag"}">المُعلَّمة (${AR(Object.keys(S.flags).length)})</button>
@@ -506,6 +569,8 @@ function renderResults(){
   $("#results").innerHTML=h;
   requestAnimationFrame(()=>requestAnimationFrame(()=>{$("#arc").style.strokeDashoffset=off}));
   document.querySelectorAll(".tab").forEach(t=>t.onclick=()=>{rvFilter=t.dataset.f;document.querySelectorAll(".tab").forEach(x=>x.setAttribute("aria-selected",x===t));renderReview()});
+  $("#shareBtn").onclick=()=>shareResult(right,tot,pct);
+  if(pct>=85 && !S.celebrated){ S.celebrated=true; save(); setTimeout(confetti,400); }
   $("#again").onclick=()=>{store.del(SKEY);S=null;renderResume();show("start")};
   $("#retryWrong").onclick=()=>{const ids=S.ids.filter(id=>S.answers[id]!==qById(id).ans);if(ids.length){const sec=S.sec;newSession(ids,S.mode,sec)}};
   renderReview();
